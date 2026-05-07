@@ -17,11 +17,11 @@ def handle_errors(func):
     @functools.wraps(func)
     def wrapper(*args, **kwargs):
         import tkinter.messagebox as mb
-        from exceptions import AutoFlashError
+        from exceptions import QuizMasterError
         try:
             return func(*args, **kwargs)
-        except AutoFlashError as e:
-            mb.showerror("AutoFlash error", str(e))
+        except QuizMasterError as e:
+            mb.showerror("QuizMaster error", str(e))
         except Exception:
             tb = traceback.format_exc()
             with open("logs.txt", "a", encoding="utf-8") as f:

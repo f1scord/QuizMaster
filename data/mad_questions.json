@@ -1,0 +1,3226 @@
+{
+  "meta": {
+    "total": 220,
+    "updated": "2026-05-07",
+    "mock_exam_distribution": {
+      "equivalence": 2,
+      "partial_order": 3,
+      "countable": 2,
+      "combinatorics": 4,
+      "logic": 2,
+      "set_algebra": 1,
+      "relations": 1,
+      "big_o": 1,
+      "probability": 1,
+      "pigeonhole": 1,
+      "predicates": 1,
+      "well_order": 1
+    }
+  },
+  "cards": [
+    {
+      "id": "2015_q01",
+      "year": "2015",
+      "topic": "set_algebra",
+      "question": "Let i∈N\\0 and A =(1−3i;1+i2), then ∩ i i i2",
+      "options": {
+        "a": "(A )=(−2;1), ∩i2Nnf0g i",
+        "b": "(A )=(−3;1), ∩i2Nnf0g i",
+        "c": "(A )=(−2;2). i2Nnf0g i"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "2015_q02",
+      "year": "2015",
+      "topic": "relations",
+      "question": "Considertherelationr =(∅;∅);(∅;2);(∅;3)definedinthesetX =P(∅;2;3). Thisrelation is",
+      "options": {
+        "a": "transitive",
+        "b": "antisymmetric",
+        "c": "asymmetric"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "2015_q03",
+      "year": "2015",
+      "topic": "equivalence",
+      "question": "Consider the relation r defined in the set Z such that (x;y)∈r iff 3|(x2−y2), then",
+      "options": {
+        "a": "[3]=[−3]",
+        "b": "[3]=[0]",
+        "c": "[3]=[6]"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "2015_q04",
+      "year": "2015",
+      "topic": "functions",
+      "question": "Consider the function f :Z→Z, f(x)=maxx2;x3, then",
+      "options": {
+        "a": "f is a bijection",
+        "b": "f is a injection",
+        "c": "f is a surjection"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "2015_q05",
+      "year": "2015",
+      "topic": "partial_order",
+      "question": "Consider the relation r =(x;y):x|y defined in the set U =1;2;3;5;6;12;30, then",
+      "options": {
+        "a": "1 is the least element in U",
+        "b": "2 is the minimal element in U",
+        "c": "sup2;3;6=30"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "2015_q06",
+      "year": "2015",
+      "topic": "logic",
+      "question": "Which of the following formulas are propositional tautologies?",
+      "options": {
+        "a": "p→(((q∧¬q)→p)→(¬p))",
+        "b": "((p→q)∧¬q)→(¬p)",
+        "c": "(p→(q∧¬q))→(¬p)"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "2015_q07",
+      "year": "2015",
+      "topic": "predicates",
+      "question": "The formula ∀k∃p(pk =1) is true in the set",
+      "options": {
+        "a": "N",
+        "b": "Z−",
+        "c": "R+."
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "2015_q08",
+      "year": "2015",
+      "topic": "partial_order",
+      "question": "Let r be a relation such that r = (a;b)∈N2 :a|b , then",
+      "options": {
+        "a": "r is a partial order in N",
+        "b": "r is a linear order in N",
+        "c": "r is a well order in N. 1 dr Magdalena Kacprzak Exam Discrete Mathematics"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "2015_q09",
+      "year": "2015",
+      "topic": "partial_order",
+      "question": "Let (X;≤) be a linearly ordered set, then",
+      "options": {
+        "a": "if the set X contains a maximal element c then c is the greatest element of X",
+        "b": "if the set X contains a minimal element d then d is the least element of X",
+        "c": "if the set X contains a maximal element c then X contains also a minimal element d"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "2015_q10",
+      "year": "2015",
+      "topic": "relations",
+      "question": "The set of all asymmetric relations defined in a set A is a subset of the set of all relations defined in A which are",
+      "options": {
+        "a": "reflexive",
+        "b": "irreflexive",
+        "c": "antisymmetric"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "2015_q11",
+      "year": "2015",
+      "topic": "countable",
+      "question": "Which of the following sets are uncountable?",
+      "options": {
+        "a": "the power set of any subset of R",
+        "b": "the set of all subsets of Z",
+        "c": "the power set of N"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "2015_q12",
+      "year": "2015",
+      "topic": "recursion",
+      "question": "The sequence a(n)=2n+1 is a solution of the recursion a(0)=2, a(1)=4, a(n)=Ca(n−1)+Ba(n−2) when",
+      "options": {
+        "a": "C =−2, B =−1",
+        "b": "C =B =1",
+        "c": "C =−2, B =8"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "2015_q13",
+      "year": "2015",
+      "topic": "combinatorics",
+      "question": "How many ways are there to split 27 distinguishable students into groups of 3, if these groups are also distinguishable?",
+      "options": {
+        "a": "27!·S(27;3)",
+        "b": "S(27;3)",
+        "c": "3!·S(27;3)"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "2015_q14",
+      "year": "2015",
+      "topic": "combinatorics",
+      "question": "How many four-digit odd numbers, all of digits different, can be formed from the digits 0 to 9, if there must be a 5 in the number?",
+      "options": {
+        "a": "7·8·9·10",
+        "b": "54",
+        "c": "1064"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "2015_q15",
+      "year": "2015",
+      "topic": "combinatorics",
+      "question": "How many functions exist between the set 0;1;2;3;4 and the set 0;1;2;3?",
+      "options": {
+        "a": "5!",
+        "b": "5",
+        "c": "45"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "2015_q16",
+      "year": "2015",
+      "topic": "combinatorics",
+      "question": "How many ways are there to split 3 different prizes between 14 students, assuming that one person can receive at most one prize?",
+      "options": {
+        "a": "C3",
+        "b": "V3",
+        "c": "V 3 14 14 14"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "2015_q17",
+      "year": "2015",
+      "topic": "pigeonhole",
+      "question": "Dirichlet’s box principle allows to prove that in the power set of the set A=5;6;:::;n there exist at least two sets with the same sum of elements (e.g. the sum of elements of the set 4;11;13 is 4+11+13=28), when",
+      "options": {
+        "a": "n=10",
+        "b": "n=7",
+        "c": "n=12"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "2015_q18",
+      "year": "2015",
+      "topic": "graphs",
+      "question": "The graph of any equivalence relation",
+      "options": {
+        "a": "has an Euler-cycle",
+        "b": "may have an Euler-cycle",
+        "c": "is a binary tree"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "2015_q19",
+      "year": "2015",
+      "topic": "graphs",
+      "question": "Consider the graph G = (V;E) with V = 1;2;3;4 and E = (1;2);(1;3);(2;3);(2;4). This graph is isomorphic to",
+      "options": {
+        "a": "G=(V;E), where V =1;2;3;4, E =(2;3);(2;4);(3;1);(4;1)",
+        "b": "G=(V;E), where V =1;2;3;4, E =(1;2);(3;2);(4;3);(4;1)",
+        "c": "G=(V;E), where V =1;2;3;4, E =(1;3);(3;2);(1;2);(2;4)"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "2015_q20",
+      "year": "2015",
+      "topic": "probability",
+      "question": "Distribution of the random variable X is defined by the probability function described in the following table x 1 2 3 4 i p 0,25 0,3 a 0,2 i then",
+      "options": {
+        "a": "E(X)=2,4",
+        "b": "E(X)=1,65",
+        "c": "a=0;25 2 dr Magdalena Kacprzak"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "2017_q01",
+      "year": "2017",
+      "topic": "set_algebra",
+      "question": "Let A=a,b and B =a,b. Then, the set (A×B)\\(B×A) is equal to",
+      "options": {
+        "a": "∅",
+        "b": "(a,a),(a,b),(b,a)",
+        "c": "a,b"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "2017_q02",
+      "year": "2017",
+      "topic": "relations",
+      "question": "Consider the relation |x−y|>1 defined in the set Z. This relation is",
+      "options": {
+        "a": "irreflexive",
+        "b": "symmetric",
+        "c": "transitive"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "2017_q03",
+      "year": "2017",
+      "topic": "equivalence",
+      "question": "Consider the equivalence relation r defined in the set Z such that (x,y)∈r iff 2|(x2−y2), then",
+      "options": {
+        "a": "[2]=[4]",
+        "b": "[1]=[−1]",
+        "c": "[1]∪[2]=Z"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "2017_q04",
+      "year": "2017",
+      "topic": "functions",
+      "question": "Consider the function f :R→R, f(x)=minx3,x, then",
+      "options": {
+        "a": "f is a bijection",
+        "b": "f−1(Y)=[−1,2] for Y =[−1,2]",
+        "c": "f(X)=[−2,2] for X =[−2,2]"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "2017_q05",
+      "year": "2017",
+      "topic": "partial_order",
+      "question": "Consider the relation r =(x,y):x|y, then",
+      "options": {
+        "a": "r is a linear order in Z",
+        "b": "r is a well order in N\\0",
+        "c": "r is a partial order in Z"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "2017_q06",
+      "year": "2017",
+      "topic": "logic",
+      "question": "The formula ((p∧q)→r)→(p→(q →r))",
+      "options": {
+        "a": "is a propositional tautology",
+        "b": "is satisfied by the valuation v(p)=v(q)=v(r)=0",
+        "c": "is falsified by the valuation v(p)=v(q)=v(r)=1"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "2017_q07",
+      "year": "2017",
+      "topic": "predicates",
+      "question": "The formula ∀k∃p(pk =1) is true in the set",
+      "options": {
+        "a": "N",
+        "b": "Q",
+        "c": "R+"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "2017_q08",
+      "year": "2017",
+      "topic": "partial_order",
+      "question": "ConsiderthesetA=a,a,b,b,d,a,b,c,a,b,c,d,a,b,c,e,f,g,hwiththerelationr ⊆ A2 such that (X,Y) ∈r iff X∩Y =X. A minimal element in (A,r) is",
+      "options": {
+        "a": "a",
+        "b": "a,b",
+        "c": "b,d. 1 dr Magdalena Kacprzak Exam - Discrete Mathematics"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "2017_q09",
+      "year": "2017",
+      "topic": "partial_order",
+      "question": "Consider the set A=2,4,5,10,40,50,1000 with the order relation r ⊆A2 such that (x,y)∈r iff x|y. Then",
+      "options": {
+        "a": "inf4,5,10=1",
+        "b": "sup10,40,50=50",
+        "c": "inf5,10,40=5"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "2017_q10",
+      "year": "2017",
+      "topic": "countable",
+      "question": "The equipotent sets are",
+      "options": {
+        "a": "N and Z",
+        "b": "R and Q",
+        "c": "C and Z"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "2017_q11",
+      "year": "2017",
+      "topic": "recursion",
+      "question": "The sequence s(n)=(−2)n+3n is a solution of the recursion",
+      "options": {
+        "a": "s(0)=2, s(1)=1; s(n)=s(n−1)+6s(n−2) for n≥2",
+        "b": "s(0)=2, s(1)=0; s(n)=2s(n−1)+3n for n≥2",
+        "c": "s(0)=2, s(1)=3; s(n)=s(n−1)−6s(n−2) for n≥2"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "2017_q12",
+      "year": "2017",
+      "topic": "combinatorics",
+      "question": "Considerbinarysequencesofalengthof10, inwhichthedigit1occursexactly5times. Howmany such sequences are there?",
+      "options": {
+        "a": "C5",
+        "b": "5!",
+        "c": "V 5 . 10 10"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "2017_q13",
+      "year": "2017",
+      "topic": "combinatorics",
+      "question": "How many ways are there to split 4 different prizes between 20 students? We do not assume that one person can receive at most one prize.",
+      "options": {
+        "a": "C4",
+        "b": "V4",
+        "c": "V 4 20 20 20"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "2017_q14",
+      "year": "2017",
+      "topic": "combinatorics",
+      "question": "How many irreflexive relations can be determined in the set 1,2,...,n?",
+      "options": {
+        "a": "2n·2n2 2 −n",
+        "b": "2n2 2 −n",
+        "c": "2n2−n. √"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "2017_q15",
+      "year": "2017",
+      "topic": "combinatorics",
+      "question": "How many different linear orderings can be defined in the set 2,e,π?",
+      "options": {
+        "a": "3",
+        "b": "6",
+        "c": "9"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "2017_q16",
+      "year": "2017",
+      "topic": "combinatorics",
+      "question": "How many different equivalence relations can be defined over the set a,b,c,d?",
+      "options": {
+        "a": "S(4,1)+S(4,2)+S(4,3)+S(4,4)",
+        "b": "4!",
+        "c": "256"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "2017_q17",
+      "year": "2017",
+      "topic": "graphs",
+      "question": "Consider the graph G = (V,E) with V = 0,1,2,3,4 and E = (0,1),(0,2),(0,3),(0,4),(4,1). This graph is isomorphic to",
+      "options": {
+        "a": "G=(V,E) with V =0,1,2,3,4, E =(0,1),(0,2),(0,3),(0,4),(1,4)",
+        "b": "G=(V,E) with V =0,1,2,3,4, E =(1,0),(2,0),(3,0),(4,0),(4,1)",
+        "c": "G=(V,E) with V =0,1,2,3,4, E =(0,1),(0,2),(0,3),(0,4),(3,2)"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "2017_q18",
+      "year": "2017",
+      "topic": "combinatorics",
+      "question": "In how many ways can we choose 2 different numbers from the set 1,2,...,100 such that their arithmetic sum is odd?",
+      "options": {
+        "a": "(C2 )2",
+        "b": "2·C2",
+        "c": "C2 ·C2 . 50 50 50 48"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "2017_q19",
+      "year": "2017",
+      "topic": "pigeonhole",
+      "question": "Inasetofselected100studentseverysurnamestartswiththelettersK,M,SorT.UsingDirichlet’s box principle we can prove that in this group there are at least x students whose names start on the same letter, when",
+      "options": {
+        "a": "x=25",
+        "b": "x=27",
+        "c": "x=26"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "2017_q20",
+      "year": "2017",
+      "topic": "probability",
+      "question": "A player tosses a coin twice. He receives 2, if he gets two tails, 1 if he gets tails once and 0, if he gets two heads. The expected value of the prize is",
+      "options": {
+        "a": "EX =2",
+        "b": "EX =0",
+        "c": "EX =1. Notation: Ck (Vk) - the number of k-element combinations (variations) over an n-element set. n n k V - the number of k-element variations with repetition over an n-element set. n S(n,k) - the number of ways to partition a set of n objects into k non-empty subsets. 2 dr Magdalena Kacprzak"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "2018_q01",
+      "year": "2018",
+      "topic": "set_algebra",
+      "question": "Which of the following sentences are/is valid?",
+      "options": {
+        "a": "The power set of A, i.e. P(A), is nonempty for arbitrary A",
+        "b": "The set 1,2,2 has two elements",
+        "c": "The power set of 1,2 has exactly three elements"
+      },
+      "correct": [
+        "a"
+      ],
+      "explanation": "(a) is correct."
+    },
+    {
+      "id": "2018_q02",
+      "year": "2018",
+      "topic": "set_algebra",
+      "question": "Indicate valid properties of Cartesian product.",
+      "options": {
+        "a": "X×Y =Y ×X iff (X =Y) or (X or Y is empty)",
+        "b": "If |X|=n and |Y|=k then |X×Y|=n·k",
+        "c": "If |X|=|Y|=n then |P(X×Y)|=2n"
+      },
+      "correct": [
+        "a",
+        "b"
+      ],
+      "explanation": "(a) is correct. (b) is correct."
+    },
+    {
+      "id": "2018_q03",
+      "year": "2018",
+      "topic": "relations",
+      "question": "Let r be a binary relation. Mark the options where the suggested property corresponds to the definition of relation.",
+      "options": {
+        "a": "x r y iff x=y2; symmetry",
+        "b": "x r y iff |x|<|y|; transitivity",
+        "c": "x r y iff 2x−2y >0; transitivity"
+      },
+      "correct": [
+        "b",
+        "c"
+      ],
+      "explanation": "(b) is correct. (c) is correct."
+    },
+    {
+      "id": "2018_q04",
+      "year": "2018",
+      "topic": "logic",
+      "question": "Which of the following formulas is a tautology of propositional calculus?",
+      "options": {
+        "a": "(p∧q)→(p∨q)",
+        "b": "(¬p)→(q →p)",
+        "c": "((p∧q)→p)→q"
+      },
+      "correct": [
+        "a"
+      ],
+      "explanation": "(a) is correct."
+    },
+    {
+      "id": "2018_q05",
+      "year": "2018",
+      "topic": "logic",
+      "question": "Which of the following sets of formulas is inconsistent?",
+      "options": {
+        "a": "((p∧q)→p), (p∧(q →p))",
+        "b": "(p∨q), (p→q), (q →p)",
+        "c": "((p∨q)→p), (p→¬q), (¬p∧q)"
+      },
+      "correct": [
+        "c"
+      ],
+      "explanation": "(c) is correct."
+    },
+    {
+      "id": "2018_q06",
+      "year": "2018",
+      "topic": "probability",
+      "question": "Thefairdieistossed. LetX betherandomvariablethevalueofwhichisthetossednumber. What is valid?",
+      "options": {
+        "a": "E(X2)=20",
+        "b": "E(X)=3,5",
+        "c": "E(X)=3"
+      },
+      "correct": [
+        "b"
+      ],
+      "explanation": "(b) is correct."
+    },
+    {
+      "id": "2018_q07",
+      "year": "2018",
+      "topic": "predicates",
+      "question": "The following propositional functions are defined in the set R. Let Sat(f) be the set of all values of y which satisfy f(y). Indicate functions or function for which Sat(f)=R?",
+      "options": {
+        "a": "f(y)=∃x(xy =1)",
+        "b": "f(y)=∀x(xy >1)",
+        "c": "f(y)=∃x(xy <1)"
+      },
+      "correct": [
+        "c"
+      ],
+      "explanation": "(c) is correct."
+    },
+    {
+      "id": "2018_q08",
+      "year": "2018",
+      "topic": "partial_order",
+      "question": "Determinethesup(A,B)andinf(A,B)forthegivensetswithrespecttoinclusioninthepowerset of N. Indicate the correct answers.",
+      "options": {
+        "a": "If A=1,3,5 and B =2,3,4,6, then supA,B=1,2,3,4,5,6",
+        "b": "If A=2,4 and B =4,6,8 then infA,B=4",
+        "c": "If A=1,2,3,4 and B =2,4,6,8 then supA,B=8. 1 A dr Magdalena Kacprzak Exam - Discrete Mathematics"
+      },
+      "correct": [
+        "a",
+        "b"
+      ],
+      "explanation": "(a) is correct. (b) is correct."
+    },
+    {
+      "id": "2018_q09",
+      "year": "2018",
+      "topic": "partial_order",
+      "question": "Which of the following are partial order relations?",
+      "options": {
+        "a": "r ⊆Z2, where for all x,y, (x,y)∈r iff x−y is even",
+        "b": "r ⊆R2, where for all x,y, (x,y)∈r iff |x|<|y|",
+        "c": "r ⊆N2, where for all x,y, (x,y)∈r iff 2x−2y ≤0"
+      },
+      "correct": [
+        "c"
+      ],
+      "explanation": "(c) is correct."
+    },
+    {
+      "id": "2018_q10",
+      "year": "2018",
+      "topic": "recursion",
+      "question": "Indicate correct solution of the following recursively defined function F(0)=2, F(n+1) =2F(n) + 1 for all natural numbers n.",
+      "options": {
+        "a": "F(n)=2n+2 for n∈N",
+        "b": "F(n)=3·2n−1 for n∈N",
+        "c": "F(n)=2n+1+2n−1 for n∈N"
+      },
+      "correct": [
+        "b",
+        "c"
+      ],
+      "explanation": "(b) is correct. (c) is correct."
+    },
+    {
+      "id": "2018_q11",
+      "year": "2018",
+      "topic": "graphs",
+      "question": "Which of the proposed properties are valid?",
+      "options": {
+        "a": "If G has n nodes and n−1 edges, then there is a cycle in G",
+        "b": "IfGisadirectedgraph,thenforevery2nodesthereisatleastonepathwhichconnectthem",
+        "c": "If G is an undirected and connected, then for every 2 distinct nodes there is a path connecting them"
+      },
+      "correct": [
+        "c"
+      ],
+      "explanation": "(c) is correct."
+    },
+    {
+      "id": "2018_q12",
+      "year": "2018",
+      "topic": "functions",
+      "question": "The following relations are defined in the set of real numbers. Which of them define a function of argument x?",
+      "options": {
+        "a": "(x,y)∈r iff x2 =y3",
+        "b": "(x,y)∈r iff y =x2",
+        "c": "(x,y)∈r iff x=y2"
+      },
+      "correct": [
+        "a",
+        "b"
+      ],
+      "explanation": "(a) is correct. (b) is correct."
+    },
+    {
+      "id": "2018_q13",
+      "year": "2018",
+      "topic": "big_o",
+      "question": "Mark the valid property of functions. √",
+      "options": {
+        "a": "nlg(n)+1=O(n n)",
+        "b": "lg(n!)=O(lg(nn))",
+        "c": "n3(lg(n)+n2)=O(n(2n+n))"
+      },
+      "correct": [
+        "a",
+        "b",
+        "c"
+      ],
+      "explanation": "(a) is correct. (b) is correct. (c) is correct."
+    },
+    {
+      "id": "2018_q14",
+      "year": "2018",
+      "topic": "equivalence",
+      "question": "Letk beanaturalnumbergreaterthan1. Whatisthenumberofequivalenceclassesoftherelation r =(x,y):x,y ∈N and (x mod k)=(y mod k).",
+      "options": {
+        "a": "2 for k =2",
+        "b": "4 for k =4",
+        "c": "1 for k =2"
+      },
+      "correct": [
+        "a",
+        "b"
+      ],
+      "explanation": "(a) is correct. (b) is correct."
+    },
+    {
+      "id": "2018_q15",
+      "year": "2018",
+      "topic": "equivalence",
+      "question": "Determine which of the following binary relations are equivalence relations.",
+      "options": {
+        "a": "risarelationonthesetofallpeoplesuchthatxryiffxandycanspeakthesamelanguage",
+        "b": "r is a binary relation on 1,2,3,4 such that r =(1,1),(2,2),(3,3),(4,4),(1,3),(3,4)",
+        "c": "r is a binary relation on Z such that x r y iff 3 divides (x−y)"
+      },
+      "correct": [
+        "c"
+      ],
+      "explanation": "(c) is correct."
+    },
+    {
+      "id": "2018_q16",
+      "year": "2018",
+      "topic": "countable",
+      "question": "Which of the following sets A and B are equipotent?",
+      "options": {
+        "a": "Aisthesetofallpointsofacircle,B =R",
+        "b": "A=R,B =[0,1]",
+        "c": "A=Q,B =[−1,1]"
+      },
+      "correct": [
+        "a",
+        "b"
+      ],
+      "explanation": "(a) is correct. (b) is correct."
+    },
+    {
+      "id": "2018_q17",
+      "year": "2018",
+      "topic": "countable",
+      "question": "Which of the following sets are/is uncountable?",
+      "options": {
+        "a": "The set of all zero-one infinite sequences",
+        "b": "The set of all subsets of R",
+        "c": "The power set of N"
+      },
+      "correct": [
+        "a",
+        "b",
+        "c"
+      ],
+      "explanation": "(a) is correct. (b) is correct. (c) is correct."
+    },
+    {
+      "id": "2018_q18",
+      "year": "2018",
+      "topic": "combinatorics",
+      "question": "In how many ways one can put 16 identical balls into 4 different boxes?",
+      "options": {
+        "a": "4!16!",
+        "b": "16!",
+        "c": "19! . 16!3!"
+      },
+      "correct": [
+        "c"
+      ],
+      "explanation": "(c) is correct."
+    },
+    {
+      "id": "2018_q19",
+      "year": "2018",
+      "topic": "pigeonhole",
+      "question": "Find the correct ending: \"If the sum of nine natural numbers is equal to 101, then ...\"",
+      "options": {
+        "a": "there are five the sum of which is at least 57",
+        "b": "there are three the sum of which is at least 60",
+        "c": "there are six the sum of which is at least 71"
+      },
+      "correct": [
+        "a"
+      ],
+      "explanation": "(a) is correct."
+    },
+    {
+      "id": "2018_q20",
+      "year": "2018",
+      "topic": "combinatorics",
+      "question": "How many ways are there to split 3 different prizes between 14 students, assuming that one person can receive at most one prize?",
+      "options": {
+        "a": "C3",
+        "b": "V3",
+        "c": "V 3 14 14 14 Notation: Ck (Vk) - the number of k-element combinations (variations) over an n-element set. n n k V - the number of k-element variations with repetition over an n-element set. n S(n,k) - the number of ways to partition a set of n objects into k non-empty subsets. ANSWERS: 1a 2ab 3bc 4a 5c 6b 7c 8ab 9c 10bc 11c 12ab 13abc 14ab 15c 16ab 17abc 18c 19a 20b 2 A dr Magdalena Kacprzak"
+      },
+      "correct": [
+        "b"
+      ],
+      "explanation": "(b) is correct."
+    },
+    {
+      "id": "2019_q01",
+      "year": "2019",
+      "topic": "set_algebra",
+      "question": "Which of the following sentences are/is valid?",
+      "options": {
+        "a": "The power set of A, i.e. P(A), is an empty set if A is an empty set",
+        "b": "The power set of the set 1,∅ has 4 elements",
+        "c": "If a set A has 3 elements, then the set P(A) has exactly 8 elements"
+      },
+      "correct": [
+        "b"
+      ],
+      "explanation": "(b) is correct."
+    },
+    {
+      "id": "2019_q02",
+      "year": "2019",
+      "topic": "set_algebra",
+      "question": "Indicate valid properties of Cartesian product. For any sets X,Y,",
+      "options": {
+        "a": "if X×Y =Y ×X, then X =∅ or Y =∅",
+        "b": "if |X|=n and |Y|=k for n,k ∈N, then |X×Y|=|X|·|Y|",
+        "c": "if X =Y, then |X×Y|= |X|"
+      },
+      "correct": [
+        "b"
+      ],
+      "explanation": "(b) is correct."
+    },
+    {
+      "id": "2019_q03",
+      "year": "2019",
+      "topic": "relations",
+      "question": "Let r be a binary relation. Mark the options where the suggested property corresponds to the definition of relation.",
+      "options": {
+        "a": "x r y iff |x|=|y|; antisymmetry",
+        "b": "x r y iff |x−y|≤2; transitivity",
+        "c": "x r y iff x=2y; irriflexivity"
+      },
+      "correct": [],
+      "explanation": "No option is correct for this question."
+    },
+    {
+      "id": "2019_q04",
+      "year": "2019",
+      "topic": "logic",
+      "question": "Which of the following formulas are tautologies of propositional calculus?",
+      "options": {
+        "a": "(p→q)→(¬p→¬q)",
+        "b": "(p→(q∧¬q))→¬p",
+        "c": "((p→q)→p)↔p"
+      },
+      "correct": [
+        "b",
+        "c"
+      ],
+      "explanation": "(b) is correct. (c) is correct."
+    },
+    {
+      "id": "2019_q05",
+      "year": "2019",
+      "topic": "logic",
+      "question": "The set of formulas ¬p→(q →r),r →(¬p∨q),q →¬p,q →¬p,q is",
+      "options": {
+        "a": "inconsistent",
+        "b": "consistent",
+        "c": "enumerable"
+      },
+      "correct": [
+        "b"
+      ],
+      "explanation": "(b) is correct."
+    },
+    {
+      "id": "2019_q06",
+      "year": "2019",
+      "topic": "predicates",
+      "question": "Indicate the formula (or formulas) true in the structure of natural numbers.",
+      "options": {
+        "a": "∀ ∀ ∃ (|n+k|=|t|)",
+        "b": "∀ ∀ ∃ (|n+t|=|k|)",
+        "c": "∀ ∀ ∃ (|n|=|k|+|t|). n k t n k t n k t"
+      },
+      "correct": [
+        "a"
+      ],
+      "explanation": "(a) is correct."
+    },
+    {
+      "id": "2019_q07",
+      "year": "2019",
+      "topic": "partial_order",
+      "question": "Determine the sup(A,B) and inf(A,B) for the given sets with respect to inclusion (⊆) in the powerset of N. Indicate the correct answers.",
+      "options": {
+        "a": "If A=1,2,3,4 and B =2,3,4,5,6,10, then supA,B=1,2,3,4,5,6,10",
+        "b": "If A=2,4,8 and B =1,8 then infA,B=8",
+        "c": "If A=1,2,4 and B =1,2,4,6,10 then supA,B=10"
+      },
+      "correct": [
+        "a",
+        "b"
+      ],
+      "explanation": "(a) is correct. (b) is correct."
+    },
+    {
+      "id": "2019_q08",
+      "year": "2019",
+      "topic": "partial_order",
+      "question": "Which of the following are total order (i.e. linear order) relations?",
+      "options": {
+        "a": "r ⊆Z2, where for all x,y, (x,y)∈r iff x mod 2 = y mod 2",
+        "b": "r ⊆N2, where for all x,y, (x,y)∈r iff |x|≤|y|",
+        "c": "r ⊆R2, where for all x,y, (x,y)∈r iff 2x−2y ≥0"
+      },
+      "correct": [
+        "b",
+        "c"
+      ],
+      "explanation": "(b) is correct. (c) is correct."
+    },
+    {
+      "id": "2019_q09",
+      "year": "2019",
+      "topic": "functions",
+      "question": "The following relations are defined in the set of real numbers. Which of them define a function of argument x?",
+      "options": {
+        "a": "(x,y)∈r iff x2 =y3",
+        "b": "(x,y)∈r iff y =x2",
+        "c": "(x,y)∈r iff x=y2. 1 A dr Magdalena Kacprzak Exam - Discrete Mathematics"
+      },
+      "correct": [
+        "a",
+        "b"
+      ],
+      "explanation": "(a) is correct. (b) is correct."
+    },
+    {
+      "id": "2019_q10",
+      "year": "2019",
+      "topic": "big_o",
+      "question": "Mark the valid property of functions.",
+      "options": {
+        "a": "nn+lg(n)+1=Θ(lognn)",
+        "b": "(2n+n)·log(n)=O(n!)",
+        "c": "(3n+n2)·n=Ω(n2·2n)"
+      },
+      "correct": [
+        "b",
+        "c"
+      ],
+      "explanation": "(b) is correct. (c) is correct."
+    },
+    {
+      "id": "2019_q11",
+      "year": "2019",
+      "topic": "equivalence",
+      "question": "Letk beanaturalnumbergreaterthan1. Whatisthenumberofequivalenceclassesoftherelation r =(x,y):x,y ∈N and (x mod k)=(y mod k).",
+      "options": {
+        "a": "3 for k =3",
+        "b": "4 for k =4",
+        "c": "15 for k =15"
+      },
+      "correct": [
+        "a",
+        "b",
+        "c"
+      ],
+      "explanation": "(a) is correct. (b) is correct. (c) is correct."
+    },
+    {
+      "id": "2019_q12",
+      "year": "2019",
+      "topic": "equivalence",
+      "question": "Determine which of the following binary relations are equivalence relations.",
+      "options": {
+        "a": "risarelationonthesetofallpeoplesuchthatxryiffxandycanspeakthesamelanguage",
+        "b": "r is a binary relation on 1,2,3,4 such that r =(1,1),(2,2),(3,3),(4,4)",
+        "c": "r is a binary relation on Z such that x r y iff 2 divides (x−y)"
+      },
+      "correct": [
+        "b",
+        "c"
+      ],
+      "explanation": "(b) is correct. (c) is correct."
+    },
+    {
+      "id": "2019_q13",
+      "year": "2019",
+      "topic": "countable",
+      "question": "Which of the following sets A and B are equipotent?",
+      "options": {
+        "a": "A is the set of all subsets of N, B = R",
+        "b": "A = R, B = (−10,10) ⊆ R",
+        "c": "A = Q, B =N"
+      },
+      "correct": [
+        "a",
+        "b",
+        "c"
+      ],
+      "explanation": "(a) is correct. (b) is correct. (c) is correct."
+    },
+    {
+      "id": "2019_q14",
+      "year": "2019",
+      "topic": "countable",
+      "question": "Which of the following sets are/is uncountable?",
+      "options": {
+        "a": "The set of all zero-one infinite sequences",
+        "b": "The set of all subsets of R",
+        "c": "The power set of the set 1,2,3,...,10100"
+      },
+      "correct": [
+        "a",
+        "b"
+      ],
+      "explanation": "(a) is correct. (b) is correct."
+    },
+    {
+      "id": "2019_q15",
+      "year": "2019",
+      "topic": "combinatorics",
+      "question": "We will put n number of people in m number of different rooms (m≤n), so that no room will be left empty. In how many different ways can we achieve this?",
+      "options": {
+        "a": "S(n,m)·m!",
+        "b": "Cm",
+        "c": "Vm. n n"
+      },
+      "correct": [
+        "a"
+      ],
+      "explanation": "(a) is correct."
+    },
+    {
+      "id": "2019_q16",
+      "year": "2019",
+      "topic": "combinatorics",
+      "question": "Wewillseatnnumberofpeopleatk numberofindistinguishabletablessothatateverytablethere will be seated at least one person. In how many different ways can we achieve this?",
+      "options": {
+        "a": "S(n,m)·m!",
+        "b": "Cm",
+        "c": "S(n,m). n"
+      },
+      "correct": [
+        "c"
+      ],
+      "explanation": "(c) is correct."
+    },
+    {
+      "id": "2019_q17",
+      "year": "2019",
+      "topic": "pigeonhole",
+      "question": "Applying the rule of Dirichlet’s Principle it is possible to prove that among five positive integers there are x such integers whose sum can be divided by 3, if",
+      "options": {
+        "a": "x=2",
+        "b": "x=3",
+        "c": "x=4"
+      },
+      "correct": [
+        "b"
+      ],
+      "explanation": "(b) is correct."
+    },
+    {
+      "id": "2019_q18",
+      "year": "2019",
+      "topic": "recursion",
+      "question": "Indicate correct solution of the following recursively defined function F(0)=3, F(1)=1, F(n+2)=−F(n+1)+6F(n) for all natural numbers n.",
+      "options": {
+        "a": "F(n)=2n+(−3)n for n∈N",
+        "b": "F(n)=2n+1 for n∈N",
+        "c": "F(n)=2n+1+(−3)n for n∈N"
+      },
+      "correct": [
+        "c"
+      ],
+      "explanation": "(c) is correct."
+    },
+    {
+      "id": "2019_q19",
+      "year": "2019",
+      "topic": "graphs",
+      "question": "Which of the proposed properties are valid?",
+      "options": {
+        "a": "If G is a graph with k vertices and the number of edges incident with every vertex is even, then there is a cycle in G",
+        "b": "If G is an undirected graph such that for every 2 nodes there is at least one path that connects them, then there is a cycle in G",
+        "c": "If G is an undirected and connected, then for every 2 distinct nodes there is a path connecting them"
+      },
+      "correct": [
+        "a",
+        "c"
+      ],
+      "explanation": "(a) is correct. (c) is correct."
+    },
+    {
+      "id": "2019_q20",
+      "year": "2019",
+      "topic": "probability",
+      "question": "Thefairdieistossed. LetX betherandomvariablethevalueofwhichisthetossednumber. What is valid?",
+      "options": {
+        "a": "E(X2)=20",
+        "b": "E(X)=3,5",
+        "c": "E(X)=3. Notation: Ck (Vk) - the number of k-element combinations (variations) over an n-element set. n n k V - the number of k-element variations with repetition over an n-element set. n S(n,k) - the number of ways to partition a set of n objects into k non-empty subsets. ANSWERS: 1b 2b 3∅ 4bc 5b 6a 7ab 8bc 9ab 10bc 11abc 12bc 13abc 14ab 15a 16c 17b 18c 19ac 20b 2 A dr Magdalena Kacprzak"
+      },
+      "correct": [
+        "b"
+      ],
+      "explanation": "(b) is correct."
+    },
+    {
+      "id": "2019j_q01",
+      "year": "2019_june",
+      "topic": "pigeonhole",
+      "question": "Using the Pigeonhole Principle it is possible to prove that in every set containing 5 integers a ,a ,...,a there is a subset with the sum of elements divisible by 1 2 5",
+      "options": {
+        "a": "5",
+        "b": "7",
+        "c": "3"
+      },
+      "correct": [
+        "a",
+        "c"
+      ],
+      "explanation": "(a) is correct. (c) is correct."
+    },
+    {
+      "id": "2019j_q02",
+      "year": "2019_june",
+      "topic": "combinatorics",
+      "question": "There are 4 hats belonging to 4 people. Each person takes a randomly chosen hat. How many possible outcomes are there in which no person gets their own hat?",
+      "options": {
+        "a": "9",
+        "b": "15",
+        "c": "24"
+      },
+      "correct": [
+        "a"
+      ],
+      "explanation": "(a) is correct."
+    },
+    {
+      "id": "2019j_q03",
+      "year": "2019_june",
+      "topic": "combinatorics",
+      "question": "Thereare30ticketsinthelottery,including3identicalwinningtickets. 10peoplebought3tickets. How many different placements of winning tickets are there?",
+      "options": {
+        "a": "C3",
+        "b": "C3",
+        "c": "C3 . 10 30 12"
+      },
+      "correct": [
+        "c"
+      ],
+      "explanation": "(c) is correct."
+    },
+    {
+      "id": "2019j_q04",
+      "year": "2019_june",
+      "topic": "combinatorics",
+      "question": "Howmanyfour-digitcodesarebuiltfromdifferentdigitssuchthatthedifferencebetweenthelargest and the smallest digit does not exceed 3?",
+      "options": {
+        "a": "5·C4·4!",
+        "b": "7·4!",
+        "c": "6·4!. 6"
+      },
+      "correct": [
+        "b"
+      ],
+      "explanation": "(b) is correct."
+    },
+    {
+      "id": "2019j_q05",
+      "year": "2019_june",
+      "topic": "pigeonhole",
+      "question": "What is the minimum number of students required in a discrete mathematics class to be sure that at least six will receive the same grade, if there are five possible grades, A, B, C, D, and F?",
+      "options": {
+        "a": "26",
+        "b": "30",
+        "c": "20"
+      },
+      "correct": [
+        "a"
+      ],
+      "explanation": "(a) is correct."
+    },
+    {
+      "id": "2019j_q06",
+      "year": "2019_june",
+      "topic": "probability",
+      "question": "Thefairdieistossed. LetX betherandomvariablethevalueofwhichisthetossednumber. What is valid?",
+      "options": {
+        "a": "E(X2)=20",
+        "b": "E(X)=3,5",
+        "c": "E(X)=3"
+      },
+      "correct": [
+        "b"
+      ],
+      "explanation": "(b) is correct."
+    },
+    {
+      "id": "2019j_q07",
+      "year": "2019_june",
+      "topic": "set_algebra",
+      "question": "Can you conclude that A=B if A, B, and C are sets such that",
+      "options": {
+        "a": "A∪C =B∪C ?",
+        "b": "A∩C =B∩C?",
+        "c": "A∪C =B∪C and A∩C =B∩C?"
+      },
+      "correct": [
+        "c"
+      ],
+      "explanation": "(c) is correct."
+    },
+    {
+      "id": "2019j_q08",
+      "year": "2019_june",
+      "topic": "set_algebra",
+      "question": "The symmetric difference of A and B, denoted by A⊕B, is the set containing those elements in either A or B, but not in both A and B. If A and B are subsets of a universal set U, then",
+      "options": {
+        "a": "A⊕B =(A∪B)\\(A∩B)",
+        "b": "A⊕B =(A)∪(B)",
+        "c": "A⊕U =U"
+      },
+      "correct": [
+        "a",
+        "b",
+        "c"
+      ],
+      "explanation": "(a) is correct. (b) is correct. (c) is correct."
+    },
+    {
+      "id": "2019j_q09",
+      "year": "2019_june",
+      "topic": "partial_order",
+      "question": "A poset is a partially ordered set (i.e. a set with a partial order). Which of the following are posets?",
+      "options": {
+        "a": "The real numbers ordered by the standard less-than-or-equal relation",
+        "b": "The set of subsets of a given set (its power set) ordered by inclusion",
+        "c": "The vertex set of a directed acyclic graph ordered by reachability. B 1 dr Magdalena Kacprzak Exam - Discrete Mathematics"
+      },
+      "correct": [
+        "a",
+        "b",
+        "c"
+      ],
+      "explanation": "(a) is correct. (b) is correct. (c) is correct."
+    },
+    {
+      "id": "2019j_q10",
+      "year": "2019_june",
+      "topic": "partial_order",
+      "question": "There is a partially ordered set that has",
+      "options": {
+        "a": "a minimal element but no maximal element",
+        "b": "a greatest element but no least element",
+        "c": "neither a greatest nor least element"
+      },
+      "correct": [
+        "a",
+        "b",
+        "c"
+      ],
+      "explanation": "(a) is correct. (b) is correct. (c) is correct."
+    },
+    {
+      "id": "2019j_q11",
+      "year": "2019_june",
+      "topic": "functions",
+      "question": "4. Let f be a function from the set X to the set Y. Let A and B be subsets of X. Which of the properties, if any, are valid? Notice that f(A) is the image of the set A under the function f.",
+      "options": {
+        "a": "f(A∪B)⊆f(A)∪f(B)",
+        "b": "f(A)(B)⊆f(A)",
+        "c": "f(A∩B)⊆f(A)∩f(B)"
+      },
+      "correct": [
+        "a",
+        "b",
+        "c"
+      ],
+      "explanation": "(a) is correct. (b) is correct. (c) is correct."
+    },
+    {
+      "id": "2019j_q12",
+      "year": "2019_june",
+      "topic": "big_o",
+      "question": "Mark the valid properties, if any, of functions. √",
+      "options": {
+        "a": "n+ n+2n =O(2n·lg(n))",
+        "b": "(n5+n)·lg(n)=O(lg(nn))",
+        "c": "2n+n3·n!=O(nn+n2+lg(n))"
+      },
+      "correct": [
+        "a",
+        "c"
+      ],
+      "explanation": "(a) is correct. (c) is correct."
+    },
+    {
+      "id": "2019j_q13",
+      "year": "2019_june",
+      "topic": "equivalence",
+      "question": "The relation r consisting of all pairs (x,y) such that x and y are bit strings of length three or more that agree in their first three bits is an equivalence relation on the set of all bit strings of length three or more. What is the number of equivalence classes of this relation?",
+      "options": {
+        "a": "3",
+        "b": "∞",
+        "c": "8"
+      },
+      "correct": [
+        "c"
+      ],
+      "explanation": "(c) is correct."
+    },
+    {
+      "id": "2019j_q14",
+      "year": "2019_june",
+      "topic": "equivalence",
+      "question": "Determine which of the following binary relations are equivalence relations.",
+      "options": {
+        "a": "=l",
+        "b": "r is the relation on the set of real numbers such that (x,y) ∈ r if and only if x and y are real numbers that differ by less than 1, that is |x−y|<1",
+        "c": "ristherelationonthesetofrealnumberssuchthat(a,b)∈rifandonlyifa−bisaninteger"
+      },
+      "correct": [
+        "a",
+        "c"
+      ],
+      "explanation": "(a) is correct. (c) is correct."
+    },
+    {
+      "id": "2019j_q15",
+      "year": "2019_june",
+      "topic": "countable",
+      "question": "Which of the following sets A and B are equipotent?",
+      "options": {
+        "a": "A=N×Z, B =Q",
+        "b": "A=Q, B =Z×R",
+        "c": "A=R×R×R, B =R∪Z"
+      },
+      "correct": [
+        "a",
+        "c"
+      ],
+      "explanation": "(a) is correct. (c) is correct."
+    },
+    {
+      "id": "2019j_q16",
+      "year": "2019_june",
+      "topic": "countable",
+      "question": "Which of the following sets, if any, are countable?",
+      "options": {
+        "a": "The set of all ternary finite sequences",
+        "b": "The set of all subsets of Z",
+        "c": "The power set of the set −4,0,3,2"
+      },
+      "correct": [
+        "a"
+      ],
+      "explanation": "(a) is correct."
+    },
+    {
+      "id": "2019j_q17",
+      "year": "2019_june",
+      "topic": "relations",
+      "question": "Letr ⊆Z2. Marktheoptionswherethesuggestedpropertycorrespondstothedefinitionofrelation.",
+      "options": {
+        "a": "x r y iff (x+1)2 =(y+1)2; transitive",
+        "b": "x r y iff 2|x| =2|y|; antisymmetrical",
+        "c": "x r y iff 2x−2y >0; irreflexive"
+      },
+      "correct": [
+        "a",
+        "c"
+      ],
+      "explanation": "(a) is correct. (c) is correct."
+    },
+    {
+      "id": "2019j_q18",
+      "year": "2019_june",
+      "topic": "logic",
+      "question": "Which of the following formulas, if any, is a tautology of propositional calculus?",
+      "options": {
+        "a": "(p∨q)→(p∧q)",
+        "b": "¬(t∨s)→((t∨s)→(¬p∨q))",
+        "c": "((p∧q)→p)→(¬(p∧q))"
+      },
+      "correct": [
+        "b"
+      ],
+      "explanation": "(b) is correct."
+    },
+    {
+      "id": "2019j_q19",
+      "year": "2019_june",
+      "topic": "partial_order",
+      "question": "Determinethesup(A,B)andinf(A,B)forthegivensetswithrespecttoinclusioninthepowerset of N. Indicate the correct answers.",
+      "options": {
+        "a": "If A=1,3,5 and B =2,3,4,6, then supA,B=1,2,3,4,5,6",
+        "b": "If A=1,2,10 and B =1,2,4,6,, then infA,B=1",
+        "c": "If A=1,2,3,4 and B =2,4,6,8, then supA,B=1,2,3,4,5,6,7,8"
+      },
+      "correct": [
+        "a"
+      ],
+      "explanation": "(a) is correct."
+    },
+    {
+      "id": "2019j_q20",
+      "year": "2019_june",
+      "topic": "graphs",
+      "question": "Which of the proposed properties are valid?",
+      "options": {
+        "a": "IfGisanundirectedgraphcontainingnoloopsormultipleedges,thenifthegraphhasnnodes and n−1 edges, then it is connected",
+        "b": "IfGisadirectedgraph,thenforevery2nodesthereisatleastonepathwhichconnectthem",
+        "c": "If G is an undirected and connected, then for every 2 distinct nodes there is a path connecting them. Notation: Ck (Vk) - the number of k-element combinations (variations) over an n-element set. n n ANSWERS: 1ac 2a 3c 4b 5a 6b 7c 8abc 9abc 10abc 11abc 12ac 13c 14ac 15ac 16a 17ac 18b 19a 20c B 2 dr Magdalena Kacprzak"
+      },
+      "correct": [
+        "c"
+      ],
+      "explanation": "(c) is correct."
+    },
+    {
+      "id": "2020_q01",
+      "year": "2020",
+      "topic": "countable",
+      "question": "The set of all functions from the set a,b,c to the set 0,1 is",
+      "options": {
+        "a": "uncountable",
+        "b": "equipotent to 1,2,3,4,5,6,7,8",
+        "c": "equipotent to N"
+      },
+      "correct": [
+        "b"
+      ],
+      "explanation": "(b) is correct."
+    },
+    {
+      "id": "2020_q02",
+      "year": "2020",
+      "topic": "pigeonhole",
+      "question": "Using the Pigeonhole Principle you can prove that in every set of x integers, there exist two whose difference is a multiple of 30, if",
+      "options": {
+        "a": "x=30",
+        "b": "x=40",
+        "c": "x=10"
+      },
+      "correct": [
+        "b"
+      ],
+      "explanation": "(b) is correct."
+    },
+    {
+      "id": "2020_q03",
+      "year": "2020",
+      "topic": "combinatorics",
+      "question": "There are five flavors of ice cream: banana, chocolate, lemon, strawberry and vanilla. We can have three scoops. How many variations will there be? ' ' ' ' ' ' 7 7 5",
+      "options": {
+        "a": "",
+        "b": "",
+        "c": ". 3 4 3"
+      },
+      "correct": [
+        "a",
+        "b"
+      ],
+      "explanation": "(a) is correct. (b) is correct."
+    },
+    {
+      "id": "2020_q04",
+      "year": "2020",
+      "topic": "graphs",
+      "question": "Every finite undirected graph with n vertices has two vertices of the same degree, if",
+      "options": {
+        "a": "n=2",
+        "b": "n=3",
+        "c": "n=4"
+      },
+      "correct": [
+        "a",
+        "b",
+        "c"
+      ],
+      "explanation": "(a) is correct. (b) is correct. (c) is correct."
+    },
+    {
+      "id": "2020_q05",
+      "year": "2020",
+      "topic": "logic",
+      "question": "The formula ((p→q)∨¬r)→(r →¬p) is",
+      "options": {
+        "a": "a tautology",
+        "b": "satisfiable",
+        "c": "unsatisfiable"
+      },
+      "correct": [
+        "b"
+      ],
+      "explanation": "(b) is correct."
+    },
+    {
+      "id": "2020_q06",
+      "year": "2020",
+      "topic": "relations",
+      "question": "Let r be the relation on the set of ordered pairs of positive integers such that ((a,b),(c,d)) ∈ r if and only if ad=bc. The relation r is",
+      "options": {
+        "a": "reflexive",
+        "b": "symmetric",
+        "c": "transitive"
+      },
+      "correct": [
+        "a",
+        "b",
+        "c"
+      ],
+      "explanation": "(a) is correct. (b) is correct. (c) is correct."
+    },
+    {
+      "id": "2020_q07",
+      "year": "2020",
+      "topic": "countable",
+      "question": "Two sets A and B are equipotent if and only if there exists a function f :A→B which is",
+      "options": {
+        "a": "a one-to-one mapping",
+        "b": "a mapping onto B",
+        "c": "bijection"
+      },
+      "correct": [
+        "c"
+      ],
+      "explanation": "(c) is correct."
+    },
+    {
+      "id": "2020_q08",
+      "year": "2020",
+      "topic": "countable",
+      "question": "Which sets are equipotent?",
+      "options": {
+        "a": "∅ and ∅,∅",
+        "b": "∅,∅ and ∅,∅,∅",
+        "c": "∅ and ∅"
+      },
+      "correct": [
+        "c"
+      ],
+      "explanation": "(c) is correct."
+    },
+    {
+      "id": "2020_q09",
+      "year": "2020",
+      "topic": "partial_order",
+      "question": "A maximal element of the set (2,3,4,5,6,,|) is",
+      "options": {
+        "a": "4",
+        "b": "5",
+        "c": "6"
+      },
+      "correct": [
+        "a",
+        "b",
+        "c"
+      ],
+      "explanation": "(a) is correct. (b) is correct. (c) is correct."
+    },
+    {
+      "id": "2020_q10",
+      "year": "2020",
+      "topic": "graphs",
+      "question": "An edge in an undirected connected graph is a bridge iff removing it disconnects the graph. Every connected graph all of whose vertices have even degrees contains",
+      "options": {
+        "a": "no bridges",
+        "b": "one bridge",
+        "c": "two bridges"
+      },
+      "correct": [
+        "a"
+      ],
+      "explanation": "(a) is correct."
+    },
+    {
+      "id": "2020_q11",
+      "year": "2020",
+      "topic": "relations",
+      "question": "Let r and s be binary relations in U. If both relations r and s are symmetric then the union of r and s",
+      "options": {
+        "a": "may not be symmetric",
+        "b": "is symmetric",
+        "c": "is transitive too. 1 INTE dr Magdalena Kacprzak Exam - Discrete Mathematics"
+      },
+      "correct": [
+        "b"
+      ],
+      "explanation": "(b) is correct."
+    },
+    {
+      "id": "2020_q12",
+      "year": "2020",
+      "topic": "relations",
+      "question": "The relation r on the set of all integers where (x,y)∈r if and only if x≥y2 is",
+      "options": {
+        "a": "reflexive",
+        "b": "transitive",
+        "c": "asymmetric"
+      },
+      "correct": [
+        "b"
+      ],
+      "explanation": "(b) is correct."
+    },
+    {
+      "id": "2020_q13",
+      "year": "2020",
+      "topic": "set_algebra",
+      "question": "For arbitrary sets A, B, and C it holds",
+      "options": {
+        "a": "A\\(B∩C)=(A)∪(A)",
+        "b": "if A∈B and B ⊆C, then A⊆C",
+        "c": "if A⊆B and B ⊆C, then A⊆C"
+      },
+      "correct": [
+        "a",
+        "c"
+      ],
+      "explanation": "(a) is correct. (c) is correct."
+    },
+    {
+      "id": "2020_q14",
+      "year": "2020",
+      "topic": "pigeonhole",
+      "question": "What is the smallest number of students required in a discrete mathematics class to be sure that at least two will receive the same grade, if there are five possible grades, A, B, C, D, and F?",
+      "options": {
+        "a": "2",
+        "b": "6",
+        "c": "10"
+      },
+      "correct": [
+        "b"
+      ],
+      "explanation": "(b) is correct."
+    },
+    {
+      "id": "2020_q15",
+      "year": "2020",
+      "topic": "well_order",
+      "question": "There is a well ordered set that has",
+      "options": {
+        "a": "neither a maximal nor minimal element",
+        "b": "a greatest element but no least element",
+        "c": "a maximal element but no greatest element"
+      },
+      "correct": [],
+      "explanation": "No option is correct for this question."
+    },
+    {
+      "id": "2020_q16",
+      "year": "2020",
+      "topic": "big_o",
+      "question": "Mark the valid properties, if any, of functions. √",
+      "options": {
+        "a": "n+ n+n2 =O(n2·lg(n))",
+        "b": "n5+n+lg(n)=O(lg(nn))",
+        "c": "2n·n3 =O(n!+lg(n))"
+      },
+      "correct": [
+        "a",
+        "c"
+      ],
+      "explanation": "(a) is correct. (c) is correct."
+    },
+    {
+      "id": "2020_q17",
+      "year": "2020",
+      "topic": "partial_order",
+      "question": "Determinethesup(A,B)andinf(A,B)forthegivensetswithrespecttoinclusioninthepowerset of N. Indicate the correct answers.",
+      "options": {
+        "a": "If A=1,3,5 and B =2,3,4,6,8, then supA,B=1,2,3,4,5,6,7,8",
+        "b": "If A=1,3,10 and B =1,2,4,6,, then infA,B=1",
+        "c": "If A=1,2,3,4 and B =2,4,6,8, then supA,B=1,2,3,4,6,8"
+      },
+      "correct": [
+        "b",
+        "c"
+      ],
+      "explanation": "(b) is correct. (c) is correct."
+    },
+    {
+      "id": "2020_q18",
+      "year": "2020",
+      "topic": "graphs",
+      "question": "Which of the proposed properties are valid for a graph G with n nodes?",
+      "options": {
+        "a": "ThesmallestnumberofedgesthatanundirectedandconnectedgraphGmayhaveisn−1",
+        "b": "The maximum number of edges of an acyclic graph G is n−1",
+        "c": "If G has exactly n−1 edges then G is a tree"
+      },
+      "correct": [
+        "a",
+        "b"
+      ],
+      "explanation": "(a) is correct. (b) is correct."
+    },
+    {
+      "id": "2020_q19",
+      "year": "2020",
+      "topic": "combinatorics",
+      "question": "We assume that two cars’ registration numbers are similar, if the sets of their signs (letters and digits) are equal. How many non similar registration numbers can be created in Warsaw, if every registrationnumberbeginswiththreedifferentletters,thefirstofwhichistheletterW,thesecond aswellasthethirdonebelongtothesetA,B,Z,andafterthemtherestandfourdecimaldigits?",
+      "options": {
+        "a": "104",
+        "b": "9·104",
+        "c": "900"
+      },
+      "correct": [
+        "b"
+      ],
+      "explanation": "(b) is correct."
+    },
+    {
+      "id": "2020_q20",
+      "year": "2020",
+      "topic": "graphs",
+      "question": "We are given a graph with n vertices numbered from 1 to n, and a set of k colors. In how many ways can this graph be vertex colored?",
+      "options": {
+        "a": "k!",
+        "b": "kn",
+        "c": "nk. n!(k−n)! Answers: 1B, 2B, 3AB, 4ABC, 5B, 6ABC, 7C, 8C, 9ABC, 10A, 11B, 12B, 13AC, 14B, 15 NO, 16AC, 17BC, 18AB, 19B, 20B 2 INTE dr Magdalena Kacprzak"
+      },
+      "correct": [
+        "b"
+      ],
+      "explanation": "(b) is correct."
+    },
+    {
+      "id": "2022_q01",
+      "year": "2022",
+      "topic": "countable",
+      "question": "Which of the following sets are uncountable?",
+      "options": {
+        "a": "The set of all zero-one infinite sequences",
+        "b": "The power set of N",
+        "c": "The set of all subsets of R"
+      },
+      "correct": [
+        "a",
+        "b",
+        "c"
+      ],
+      "explanation": "(a) is correct. (b) is correct. (c) is correct."
+    },
+    {
+      "id": "2022_q02",
+      "year": "2022",
+      "topic": "countable",
+      "question": "Which of the following sentences are valid?",
+      "options": {
+        "a": "There are uncountable proper subsets of the set of real numbers",
+        "b": "All subsets of the set of real numbers are uncountable",
+        "c": "Every two nonempty intervals of the set of real numbers are equipotent"
+      },
+      "correct": [
+        "a",
+        "c"
+      ],
+      "explanation": "(a) is correct. (c) is correct."
+    },
+    {
+      "id": "2022_q03",
+      "year": "2022",
+      "topic": "equivalence",
+      "question": "Determine which of the following binary relations are equivalence relations.",
+      "options": {
+        "a": "r is a binary relation on 1,2,3,4 such that r =(1,1),(2,2),(3,3),(4,4)",
+        "b": "r is a binary relation on Z such that x r y iff 3 divides x−y",
+        "c": "r is a binary relation on Z such that x r y iff |x|=|y|"
+      },
+      "correct": [
+        "a",
+        "b",
+        "c"
+      ],
+      "explanation": "(a) is correct. (b) is correct. (c) is correct."
+    },
+    {
+      "id": "2022_q04",
+      "year": "2022",
+      "topic": "logic",
+      "question": "Indicate the formula which is NOT the invariant of the loop in the following algorithm: Alg(n) = s := 0; i := 1; while i ≤ n do s := s+(2i−1); i := i+1 od, where ’n ’ is a positive, natural numer.",
+      "options": {
+        "a": "i≤n",
+        "b": "s=(i−1)(i−1)",
+        "c": "(s+2)>i"
+      },
+      "correct": [
+        "a"
+      ],
+      "explanation": "(a) is correct."
+    },
+    {
+      "id": "2022_q05",
+      "year": "2022",
+      "topic": "equivalence",
+      "question": "Which of the following sentences are NOT valid?",
+      "options": {
+        "a": "Each partition of a set X determines the unique equivalence relation",
+        "b": "The union of two equivalence relations is an equivalence relation",
+        "c": "Each equivalence relation in X determines a unique partition of the set X"
+      },
+      "correct": [
+        "b"
+      ],
+      "explanation": "(b) is correct."
+    },
+    {
+      "id": "2022_q06",
+      "year": "2022",
+      "topic": "equivalence",
+      "question": "Let r denotes an equivalence relation in the set of all words under the alphabet A=a,b,c such that x r y iff the words x and y begin with the same first letter. Which of the following properties does NOT hold?",
+      "options": {
+        "a": "There are infinitely many words in the class [c]",
+        "b": "The equivalence classes [a] and [b] are disjoint",
+        "c": "There are only finite number of elements in the equivalence class [abc]"
+      },
+      "correct": [
+        "c"
+      ],
+      "explanation": "(c) is correct."
+    },
+    {
+      "id": "2022_q07",
+      "year": "2022",
+      "topic": "partial_order",
+      "question": "Let r be a partial order on the set of positive natural numbers defined as follows: x r y iff y is divisible by x. Indicate valid sentences.",
+      "options": {
+        "a": "sup(2,3,4,6)=12",
+        "b": "inf(45,60,75,30)=15",
+        "c": "r is a linear order. INTE 1 dr Magdalena Kacprzak Exam - Discrete Mathematics"
+      },
+      "correct": [
+        "a",
+        "b"
+      ],
+      "explanation": "(a) is correct. (b) is correct."
+    },
+    {
+      "id": "2022_q08",
+      "year": "2022",
+      "topic": "partial_order",
+      "question": "Which of the following are partial order relations?",
+      "options": {
+        "a": "r is a binary relation in R, where for all x,y, x r y iff |x|<|y|",
+        "b": "r is a binary relation in R, where for all x,y, x r y iff sin(x)=sin(y)",
+        "c": "r is a binary relation in N, where for all x,y, x r y iff |x|<|y| or x=y"
+      },
+      "correct": [
+        "c"
+      ],
+      "explanation": "(c) is correct."
+    },
+    {
+      "id": "2022_q09",
+      "year": "2022",
+      "topic": "combinatorics",
+      "question": "Cards are drawn from a deck of 52 cards with replacements. In how many ways can tencardsbedrawnsothatthetenthcardisnotarepetition? N(n,k)denoteshereNewtonbinomial symbol n! . k!(n−k)!",
+      "options": {
+        "a": "5210",
+        "b": "52·519",
+        "c": "N(52,10)"
+      },
+      "correct": [
+        "b"
+      ],
+      "explanation": "(b) is correct."
+    },
+    {
+      "id": "2022_q10",
+      "year": "2022",
+      "topic": "big_o",
+      "question": "Mark the valid properties, if any, of functions. √",
+      "options": {
+        "a": "n+ n+n2 =O(n2·lg(n))",
+        "b": "n5+n+lg(n)=O(lg(nn))",
+        "c": "2n·n3 =O(n!+lg(n))"
+      },
+      "correct": [
+        "a",
+        "c"
+      ],
+      "explanation": "(a) is correct. (c) is correct."
+    },
+    {
+      "id": "2022_q11",
+      "year": "2022",
+      "topic": "combinatorics",
+      "question": "There are 100 students in a group. 40 of them passed the exam A, 50 of them passed the exam B, and 60 - passed exam C. Moreover A and B passed 37 students, B and C passed 40 and A and C passed only 32 students. All the three exams passed 30 students. How many students in the group did not pass all three examinations?",
+      "options": {
+        "a": "35",
+        "b": "29",
+        "c": "27"
+      },
+      "correct": [
+        "b"
+      ],
+      "explanation": "(b) is correct."
+    },
+    {
+      "id": "2022_q12",
+      "year": "2022",
+      "topic": "combinatorics",
+      "question": "There are five flavors of ice cream: banana, chocolate, lemon, strawberry and vanilla. We can have three scoops. How many variations will there be? ' ' ' ' ' ' 7 7 5",
+      "options": {
+        "a": "",
+        "b": "",
+        "c": ". 3 5 3"
+      },
+      "correct": [
+        "a"
+      ],
+      "explanation": "(a) is correct."
+    },
+    {
+      "id": "2022_q13",
+      "year": "2022",
+      "topic": "logic",
+      "question": "The formula ((p→q)∨¬r)→(r →¬p) is",
+      "options": {
+        "a": "a tautology",
+        "b": "satisfiable",
+        "c": "unsatisfiable"
+      },
+      "correct": [
+        "b"
+      ],
+      "explanation": "(b) is correct."
+    },
+    {
+      "id": "2022_q14",
+      "year": "2022",
+      "topic": "countable",
+      "question": "Two sets A and B are equipotent if and only if there exists a function f :A→B which is",
+      "options": {
+        "a": "a one-to-one mapping",
+        "b": "a mapping onto B",
+        "c": "bijection"
+      },
+      "correct": [
+        "c"
+      ],
+      "explanation": "(c) is correct."
+    },
+    {
+      "id": "2022_q15",
+      "year": "2022",
+      "topic": "partial_order",
+      "question": "A maximal element of the set (2,3,4,5,6,,|) is",
+      "options": {
+        "a": "4",
+        "b": "5",
+        "c": "6"
+      },
+      "correct": [
+        "a",
+        "b",
+        "c"
+      ],
+      "explanation": "(a) is correct. (b) is correct. (c) is correct."
+    },
+    {
+      "id": "2022_q16",
+      "year": "2022",
+      "topic": "relations",
+      "question": "The relation r on the set of all integers where (x,y)∈r if and only if x≥y2 is",
+      "options": {
+        "a": "reflexive",
+        "b": "transitive",
+        "c": "asymmetric"
+      },
+      "correct": [
+        "b"
+      ],
+      "explanation": "(b) is correct."
+    },
+    {
+      "id": "2022_q17",
+      "year": "2022",
+      "topic": "set_algebra",
+      "question": "For arbitrary sets A, B, and C it holds",
+      "options": {
+        "a": "A\\(B∩C)=(A)∪(A)",
+        "b": "if A∈B and B ⊆C, then A⊆C",
+        "c": "if A⊆B and B ⊆C, then A⊆C"
+      },
+      "correct": [
+        "a",
+        "c"
+      ],
+      "explanation": "(a) is correct. (c) is correct."
+    },
+    {
+      "id": "2022_q18",
+      "year": "2022",
+      "topic": "pigeonhole",
+      "question": "What is the smallest number of students required in a discrete mathematics class to be sure that at least two will receive the same grade, if there are five possible grades, A, B, C, D, and F?",
+      "options": {
+        "a": "2",
+        "b": "6",
+        "c": "10"
+      },
+      "correct": [
+        "b"
+      ],
+      "explanation": "(b) is correct."
+    },
+    {
+      "id": "2022_q19",
+      "year": "2022",
+      "topic": "combinatorics",
+      "question": "How many ways are there to split 27 distinguishable students into groups of 3, if these groups are alsodistinguishable? (S(n,k)isthenumberofwaystopartitionasetofnobjectsintok non-empty subsets.)",
+      "options": {
+        "a": "27!·S(27;3)",
+        "b": "S(27;3)",
+        "c": "3!·S(27;3)"
+      },
+      "correct": [
+        "c"
+      ],
+      "explanation": "(c) is correct."
+    },
+    {
+      "id": "2022_q20",
+      "year": "2022",
+      "topic": "well_order",
+      "question": "There is a well ordered set that has",
+      "options": {
+        "a": "neither a maximal nor minimal element",
+        "b": "a greatest element but no least element",
+        "c": "a maximal element but no greatest element. ANSWERS: 1abc 2ac 3abc 4a 5b 6c 7ab 8c 9b 10ac 11b 12a 13b 14c 15abc 16b 17ac 18b 19c 20– INTE 2 dr Magdalena Kacprzak"
+      },
+      "correct": [],
+      "explanation": "No option is correct for this question."
+    },
+    {
+      "id": "2023a_q01",
+      "year": "2023_july_A",
+      "topic": "countable",
+      "question": "Which of the following sets are uncountable?",
+      "options": {
+        "a": "The set of all zero-one finite sequences",
+        "b": "The power set of ℤ",
+        "c": "The set of all subsets of ℝ"
+      },
+      "correct": [
+        "a",
+        "c"
+      ],
+      "explanation": "(a) is correct. (c) is correct."
+    },
+    {
+      "id": "2023a_q02",
+      "year": "2023_july_A",
+      "topic": "countable",
+      "question": "Which of the following sentences are valid?",
+      "options": {
+        "a": "There are uncountable proper subsets of the set of real numbers.",
+        "b": "Any subset of the set of real numbers is uncountable.",
+        "c": "Every two nonempty subsets of the set of natural numbers are equipotent"
+      },
+      "correct": [
+        "a",
+        "c"
+      ],
+      "explanation": "(a) is correct. (c) is correct."
+    },
+    {
+      "id": "2023a_q03",
+      "year": "2023_july_A",
+      "topic": "equivalence",
+      "question": "Determine which of the following binary relations are equivalence relations.",
+      "options": {
+        "a": "r is a binary relation on \\ 1,2,3,4 \\ such that r=\\ (1,1),(2,2),(3,3),(4,4), (1,2),(2,3),(1,3) \\",
+        "b": "r is a binary relation on ℤ such that x r y iff x^3=y^3",
+        "c": "r is a binary relation on ℤ such that x r y iff x mod 5 = y mod 5"
+      },
+      "correct": [
+        "b",
+        "c"
+      ],
+      "explanation": "(b) is correct. (c) is correct."
+    },
+    {
+      "id": "2023a_q04",
+      "year": "2023_july_A",
+      "topic": "equivalence",
+      "question": "Which of the following sentences are NOT valid?",
+      "options": {
+        "a": "Each equivalence relation defined on a set X determines a partition of X",
+        "b": "The intersection of two equivalence relations is an equivalence relation",
+        "c": "In a set A such that |A|=5, you can specify up to 5 equivalence relations"
+      },
+      "correct": [
+        "b",
+        "c"
+      ],
+      "explanation": "(b) is correct. (c) is correct."
+    },
+    {
+      "id": "2023a_q05",
+      "year": "2023_july_A",
+      "topic": "equivalence",
+      "question": "Let r denotes an equivalence relation on the set of all words under the alphabet A=\\ a,b,c \\ such that x r y iff the words x and y begin with the same first letter. Which of the following properties does NOT hold?",
+      "options": {
+        "a": "There are infinitely many words in the class [c]",
+        "b": "The equivalence classes [a] and [b] are disjoint",
+        "c": "There are only finite number of elements in the equivalence class [abc]"
+      },
+      "correct": [
+        "a",
+        "b"
+      ],
+      "explanation": "(a) is correct. (b) is correct."
+    },
+    {
+      "id": "2023a_q06",
+      "year": "2023_july_A",
+      "topic": "partial_order",
+      "question": "Let r be a partial order on the set of positive natural numbers defined as follows: x r y iff y is divisible by x. Indicate valid sentences.",
+      "options": {
+        "a": "sup(\\ 24,72,144,200 \\) = 200,",
+        "b": "inf(\\ 24,72,144,200 \\) = 1,",
+        "c": "r is a partial order"
+      },
+      "correct": [
+        "b"
+      ],
+      "explanation": "(b) is correct."
+    },
+    {
+      "id": "2023a_q07",
+      "year": "2023_july_A",
+      "topic": "partial_order",
+      "question": "Which of the following are partial order relations?",
+      "options": {
+        "a": "r is a binary relation on ℤ, where for all x, y, x r y iff x^2-y^2 < 7",
+        "b": "r is a binary relation on ℤ, where for all x, y, x r y iff (2x+5y) mod 7 =0",
+        "c": "r is a binary relation on ℤ, where for all x, y, x r y iff |x|< |y| or x=y"
+      },
+      "correct": [
+        "a"
+      ],
+      "explanation": "(a) is correct."
+    },
+    {
+      "id": "2023a_q08",
+      "year": "2023_july_A",
+      "topic": "predicates",
+      "question": "Let the predicate K(x,y,t) denote that the lion x drinks coffee type y at time t. Which formula of predicate calculus expresses that ''Every lion sometimes doesn't drink any coffee''.",
+      "options": {
+        "a": "∀_x ∀_y ∃_t ¬ K(x,y,t),",
+        "b": "∃_t ∀_x ∀_y ¬ K(x,y,t),",
+        "c": "∀_x ∃_t ∀_y ¬ K(x,y,t)"
+      },
+      "correct": [
+        "a"
+      ],
+      "explanation": "(a) is correct."
+    },
+    {
+      "id": "2023a_q09",
+      "year": "2023_july_A",
+      "topic": "big_o",
+      "question": "Mark the valid properties, if any, of functions.",
+      "options": {
+        "a": "n + 4√n + (n) = O(4n+7),",
+        "b": "n^5+n+ (n) = O(lg(n^n)),",
+        "c": "2^n · n^3 +n! = O(n^n+lg(n))."
+      },
+      "correct": [
+        "a"
+      ],
+      "explanation": "(a) is correct."
+    },
+    {
+      "id": "2023a_q10",
+      "year": "2023_july_A",
+      "topic": "logic",
+      "question": "The formula ((p ∨ q) ∧ (¬ p ∨ r)) → (q ∨ r) is",
+      "options": {
+        "a": "a tautology,",
+        "b": "satisfiable,",
+        "c": "falsifiable"
+      },
+      "correct": [
+        "b",
+        "c"
+      ],
+      "explanation": "(b) is correct. (c) is correct."
+    },
+    {
+      "id": "2023a_q11",
+      "year": "2023_july_A",
+      "topic": "relations",
+      "question": "The relation r on the set of all integers where (x,y) ∈ r if and only if |x - y| < 10 is",
+      "options": {
+        "a": "reflexive,",
+        "b": "transitive,",
+        "c": "symmetric"
+      },
+      "correct": [
+        "c"
+      ],
+      "explanation": "(c) is correct."
+    },
+    {
+      "id": "2023a_q12",
+      "year": "2023_july_A",
+      "topic": "set_algebra",
+      "question": "For arbitrary sets A, B, and C it holds",
+      "options": {
+        "a": "A∖(B∩ C) = (A∖ B) ∪ (A∖ C),",
+        "b": "if A ∈ B and B ∈ C, then A ∈ C,",
+        "c": "if A ⊆ B and B ∈ C, then A ⊆ C"
+      },
+      "correct": [
+        "a",
+        "b",
+        "c"
+      ],
+      "explanation": "(a) is correct. (b) is correct. (c) is correct."
+    },
+    {
+      "id": "2023a_q13",
+      "year": "2023_july_A",
+      "topic": "pigeonhole",
+      "question": "Using the Pigeonhole Principle you can prove that there are at least six people in California (population: 37 million) with the same x initials who were born on the same day of the year (but not necessarily in the same year) for",
+      "options": {
+        "a": "x=1,",
+        "b": "x=2,",
+        "c": "x=3"
+      },
+      "correct": [
+        "a",
+        "b",
+        "c"
+      ],
+      "explanation": "(a) is correct. (b) is correct. (c) is correct."
+    },
+    {
+      "id": "2023a_q14",
+      "year": "2023_july_A",
+      "topic": "combinatorics",
+      "question": "How many ways are there to assign 24 students to five faculty advisors?",
+      "options": {
+        "a": "(24!)/(5!· 19!),",
+        "b": "S(24,5)· 5!,",
+        "c": "5^24"
+      },
+      "correct": [
+        "c"
+      ],
+      "explanation": "(c) is correct."
+    },
+    {
+      "id": "2023a_q15",
+      "year": "2023_july_A",
+      "topic": "combinatorics",
+      "question": "In how many ways can 24 students be assigned to five faculty advisors if each advisor must have at least one student assigned?",
+      "options": {
+        "a": "(24!)/(5!· 19!),",
+        "b": "S(24,5)· 5!,",
+        "c": "5^24"
+      },
+      "correct": [
+        "b"
+      ],
+      "explanation": "(b) is correct."
+    },
+    {
+      "id": "2023a_q16",
+      "year": "2023_july_A",
+      "topic": "combinatorics",
+      "question": "How many solutions are there to the equation x1 + x2 + x3 = 17, where x1, x2, and x3 are nonnegative integers?",
+      "options": {
+        "a": "(19!)/(17!· 2!),",
+        "b": "3^17,",
+        "c": "(19!)/(17!)"
+      },
+      "correct": [
+        "b"
+      ],
+      "explanation": "(b) is correct."
+    },
+    {
+      "id": "2023a_q17",
+      "year": "2023_july_A",
+      "topic": "combinatorics",
+      "question": "How many solutions are there to the equation x1 + x2 + x3 = 17, where x1, x2, and x3 are positive integers?",
+      "options": {
+        "a": "(14!)/(11!· 3!),",
+        "b": "3^14,",
+        "c": "(14!)/(11!)"
+      },
+      "correct": [
+        "c"
+      ],
+      "explanation": "(c) is correct."
+    },
+    {
+      "id": "2023a_q18",
+      "year": "2023_july_A",
+      "topic": "combinatorics",
+      "question": "How many ways are there to split 27 distinguishable students into groups of 3, if these groups are also distinguishable?",
+      "options": {
+        "a": "27! · S(27; 3),",
+        "b": "S(27; 3),",
+        "c": "3! · S(27; 3)"
+      },
+      "correct": [
+        "c"
+      ],
+      "explanation": "(c) is correct."
+    },
+    {
+      "id": "2023a_q19",
+      "year": "2023_july_A",
+      "topic": "well_order",
+      "question": "There is a well ordered set that has",
+      "options": {
+        "a": "neither a maximal nor minimal element",
+        "b": "a greatest element but no least element",
+        "c": "a maximal element but no greatest element"
+      },
+      "correct": [
+        "a"
+      ],
+      "explanation": "(a) is correct."
+    },
+    {
+      "id": "2023a_q20",
+      "year": "2023_july_A",
+      "topic": "combinatorics",
+      "question": "Cards are drawn from a deck of 52 cards with replacements. In how many ways can ten cards be drawn so that the tenth card is not a repetition?",
+      "options": {
+        "a": "52^10,",
+        "b": "52· 51^9,",
+        "c": "(52!)/(10!42!). S(n,k) - the number of ways to partition a set of n objects into k non-empty subsets. ANSWERS: 1bc 2a 3bc 4c 5c 6c 7c 8c 9ac 10ab 11ac 12a 13abc 14c 15b 16a 17-- 18-- 19-- 20b"
+      },
+      "correct": [
+        "b"
+      ],
+      "explanation": "(b) is correct."
+    },
+    {
+      "id": "2023b_q01",
+      "year": "2023_july_B",
+      "topic": "countable",
+      "question": "Which of the following sets are uncountable?",
+      "options": {
+        "a": "The set of all zero-one infinite sequences",
+        "b": "The power set of ∅,0",
+        "c": "Any subset of the set R"
+      },
+      "correct": [
+        "a"
+      ],
+      "explanation": "(a) is correct."
+    },
+    {
+      "id": "2023b_q02",
+      "year": "2023_july_B",
+      "topic": "countable",
+      "question": "Which of the following sentences are valid?",
+      "options": {
+        "a": "There are infinite, countable proper subsets of the set of real numbers",
+        "b": "Any subset of the set of integers is uncountable",
+        "c": "Every two nonempty intervals of the set of real numbers are equipotent"
+      },
+      "correct": [
+        "a",
+        "c"
+      ],
+      "explanation": "(a) is correct. (c) is correct."
+    },
+    {
+      "id": "2023b_q03",
+      "year": "2023_july_B",
+      "topic": "equivalence",
+      "question": "Determine which of the following binary relations are equivalence relations.",
+      "options": {
+        "a": "r is a binary relation on 1,2,3,4 such that r =(1,1),(2,2),(3,3),(4,4),(1,2),(2,1)",
+        "b": "r is a binary relation on Z such that x r y iff 3 divides (x−y)",
+        "c": "r is a binary relation on Z such that x r y iff x2 =y2"
+      },
+      "correct": [
+        "a",
+        "b",
+        "c"
+      ],
+      "explanation": "(a) is correct. (b) is correct. (c) is correct."
+    },
+    {
+      "id": "2023b_q04",
+      "year": "2023_july_B",
+      "topic": "equivalence",
+      "question": "Which of the following sentences are NOT valid?",
+      "options": {
+        "a": "Each partition of a set X determines an equivalence relation on X",
+        "b": "The union of two equivalence relations is an equivalence relation",
+        "c": "In a set A such that |A|=5, we can define exactly 5 equivalence relations"
+      },
+      "correct": [
+        "b",
+        "c"
+      ],
+      "explanation": "(b) is correct. (c) is correct."
+    },
+    {
+      "id": "2023b_q05",
+      "year": "2023_july_B",
+      "topic": "equivalence",
+      "question": "Let r denotes an equivalence relation on the set of all words under the alphabet A=a,b,c such that x r y iff the words x and y begin with the same first letter. Which of the following properties does NOT hold?",
+      "options": {
+        "a": "There are infinitely many words in the class [a]",
+        "b": "The equivalence classes [b] and [c] are disjoint",
+        "c": "There are only finite number of elements in the equivalence class [cba]"
+      },
+      "correct": [
+        "c"
+      ],
+      "explanation": "(c) is correct."
+    },
+    {
+      "id": "2023b_q06",
+      "year": "2023_july_B",
+      "topic": "partial_order",
+      "question": "Let r be a partial order on the set of positive natural numbers defined as follows: x r y iff y is divisible by x. Indicate valid sentences.",
+      "options": {
+        "a": "sup(3,6,12)=24",
+        "b": "inf(24,12,6)=3",
+        "c": "r is a well-order"
+      },
+      "correct": [],
+      "explanation": "No option is correct for this question."
+    },
+    {
+      "id": "2023b_q07",
+      "year": "2023_july_B",
+      "topic": "partial_order",
+      "question": "Which of the following are partial order relations?",
+      "options": {
+        "a": "r is a binary relation on Z, where for all x,y, x r y iff (x+y) mod 5 = 0",
+        "b": "r is a binary relation on Z, where for all x,y, x r y iff (9x−2y) mod 7 = 0",
+        "c": "r is a binary relation on R, where for all x,y, x r y iff x≤y. INTE B 1 dr Magdalena Kacprzak Exam - Discrete Mathematics"
+      },
+      "correct": [
+        "c"
+      ],
+      "explanation": "(c) is correct."
+    },
+    {
+      "id": "2023b_q08",
+      "year": "2023_july_B",
+      "topic": "predicates",
+      "question": "Let the predicate K(x,y,t) denote that the lion x drinks coffee type y at time t. Which formula of predicate calculus expresses that ”Some lions never drink certain types of coffee”.",
+      "options": {
+        "a": "∃ ∀ ∃ ¬K(x,y,t)",
+        "b": "∃ ∃ ∀ ¬K(x,y,t)",
+        "c": "∀ ∃ ∃ ¬K(x,y,t). x t y x y t t x y"
+      },
+      "correct": [
+        "b"
+      ],
+      "explanation": "(b) is correct."
+    },
+    {
+      "id": "2023b_q09",
+      "year": "2023_july_B",
+      "topic": "big_o",
+      "question": "Mark the valid properties, if any, of functions. √",
+      "options": {
+        "a": "n· n+n2 =O(3n2+2n−1)",
+        "b": "n5·lg(nn)=O(n7·lg(n))",
+        "c": "2n·n3+2n=O(2n)"
+      },
+      "correct": [
+        "a",
+        "b"
+      ],
+      "explanation": "(a) is correct. (b) is correct."
+    },
+    {
+      "id": "2023b_q10",
+      "year": "2023_july_B",
+      "topic": "logic",
+      "question": "The formula ((p∨q)∧(p→r)∧(q →r))→r",
+      "options": {
+        "a": "a tautology",
+        "b": "satisfiable",
+        "c": "unsatisfiable"
+      },
+      "correct": [
+        "a",
+        "b"
+      ],
+      "explanation": "(a) is correct. (b) is correct."
+    },
+    {
+      "id": "2023b_q11",
+      "year": "2023_july_B",
+      "topic": "relations",
+      "question": "The relation r on the set of all integers where (x,y)∈r if and only if |x−y|>10 is",
+      "options": {
+        "a": "irreflexive",
+        "b": "transitive",
+        "c": "asymmetric"
+      },
+      "correct": [
+        "a"
+      ],
+      "explanation": "(a) is correct."
+    },
+    {
+      "id": "2023b_q12",
+      "year": "2023_july_B",
+      "topic": "set_algebra",
+      "question": "For arbitrary sets A, B, and C it holds",
+      "options": {
+        "a": "A\\(B∪C)=(A)∪(A)",
+        "b": "if A∈B and B ∈C, then A⊆C",
+        "c": "if A⊆B and B ⊆C, then A∈C"
+      },
+      "correct": [],
+      "explanation": "No option is correct for this question."
+    },
+    {
+      "id": "2023b_q13",
+      "year": "2023_july_B",
+      "topic": "pigeonhole",
+      "question": "Assume that there are x houses on a street. Each house has an address between 1000 and 1099, inclusive. Using the Pigeonhole Principle you can prove that at least two houses have addresses that are consecutive integers, for",
+      "options": {
+        "a": "x=50",
+        "b": "x=51",
+        "c": "x=52"
+      },
+      "correct": [
+        "b",
+        "c"
+      ],
+      "explanation": "(b) is correct. (c) is correct."
+    },
+    {
+      "id": "2023b_q14",
+      "year": "2023_july_B",
+      "topic": "combinatorics",
+      "question": "How many ways are there to choose a dozen apples from a bushel containing 20 indistinguishable Delicious apples, 20 indistinguishable Macintosh apples, and 20 indistinguishable Granny Smith apples, if at least three of each kind must be chosen?",
+      "options": {
+        "a": "5!",
+        "b": "2012",
+        "c": "60! . 2!·3! 20!·40!"
+      },
+      "correct": [
+        "a"
+      ],
+      "explanation": "(a) is correct."
+    },
+    {
+      "id": "2023b_q15",
+      "year": "2023_july_B",
+      "topic": "combinatorics",
+      "question": "How many ways are there to choose a dozen apples from a bushel containing 20 different (distingu- ishable) apples?",
+      "options": {
+        "a": "20!",
+        "b": "2012",
+        "c": "20! . 8! 12!·8!"
+      },
+      "correct": [
+        "c"
+      ],
+      "explanation": "(c) is correct."
+    },
+    {
+      "id": "2023b_q16",
+      "year": "2023_july_B",
+      "topic": "combinatorics",
+      "question": "How many different arrangements are there of eight people seated at a round table, where two arrangements are considered the same if one can be obtained from the other by a rotation?",
+      "options": {
+        "a": "87",
+        "b": "7!",
+        "c": "8!"
+      },
+      "correct": [
+        "b"
+      ],
+      "explanation": "(b) is correct."
+    },
+    {
+      "id": "2023b_q17",
+      "year": "2023_july_B",
+      "topic": "combinatorics",
+      "question": "How many different arrangements are there of eight people seated at two different tables? One of the tables may or may not be empty. There are 8 different (distinguishable) seats at each table.",
+      "options": {
+        "a": "8!",
+        "b": "16!",
+        "c": "16!. 8!"
+      },
+      "correct": [
+        "c"
+      ],
+      "explanation": "(c) is correct."
+    },
+    {
+      "id": "2023b_q18",
+      "year": "2023_july_B",
+      "topic": "combinatorics",
+      "question": "How many ways are there to split 27 distinguishable students into groups of 9, if these groups are also distinguishable?",
+      "options": {
+        "a": "27!·S(27;9)",
+        "b": "S(27;9)",
+        "c": "9!·S(27;9)"
+      },
+      "correct": [],
+      "explanation": "No option is correct for this question."
+    },
+    {
+      "id": "2023b_q19",
+      "year": "2023_july_B",
+      "topic": "partial_order",
+      "question": "There is a partial ordered set that has",
+      "options": {
+        "a": "neither a maximal nor minimal element",
+        "b": "a greatest element but no least element",
+        "c": "a maximal element but no greatest element"
+      },
+      "correct": [
+        "a",
+        "b",
+        "c"
+      ],
+      "explanation": "(a) is correct. (b) is correct. (c) is correct."
+    },
+    {
+      "id": "2023b_q20",
+      "year": "2023_july_B",
+      "topic": "combinatorics",
+      "question": "In how many ways can 6 men board 3 private planes if there must be at least one of these men on every plane (aircrew is not included). We assume that the planes are indistinguishable.",
+      "options": {
+        "a": "36",
+        "b": "S(6,3)",
+        "c": "6! . 3!3! Notation: S(n,k) - the number of ways to partition a set of n objects into k non-empty subsets. ANSWERS: 1a 2ac 3abc 4bc 5c 6– 7c 8b 9ab 10ab 11a 12– 13bc 14a 15c 16b 17c 18– 19abc 20b INTE B 2 dr Magdalena Kacprzak"
+      },
+      "correct": [
+        "b"
+      ],
+      "explanation": "(b) is correct."
+    },
+    {
+      "id": "2023s_q01",
+      "year": "2023_sept_A",
+      "topic": "countable",
+      "question": "Which of the following sets are countable?",
+      "options": {
+        "a": "The set of all zero-one finite sequences",
+        "b": "The power set of ℕ",
+        "c": "The set of all finite subsets of ℤ"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "2023s_q02",
+      "year": "2023_sept_A",
+      "topic": "countable",
+      "question": "Which of the following sentences are valid?",
+      "options": {
+        "a": "There are uncountable proper subsets of the set of real numbers.",
+        "b": "Any infinite subset of the set of real numbers is uncountable.",
+        "c": "Every two infinite subsets of the set of natural numbers are equipotent"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "2023s_q03",
+      "year": "2023_sept_A",
+      "topic": "equivalence",
+      "question": "Determine which of the following binary relations are equivalence relations.",
+      "options": {
+        "a": "r is a binary relation on \\ 1,2,3,4 \\ such that r=\\ (1,1),(2,2),(3,3),(1,2),(2,1) \\",
+        "b": "r is a binary relation on ℤ such that x r y iff x^2=y^2",
+        "c": "r is a binary relation on ℤ such that x r y iff x mod 3 = y mod 3"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "2023s_q04",
+      "year": "2023_sept_A",
+      "topic": "equivalence",
+      "question": "Which of the following sentences are NOT valid?",
+      "options": {
+        "a": "Each equivalence relation defined on a set X determines a partition of X",
+        "b": "The union of two equivalence relations is an equivalence relation",
+        "c": "In a set A such that |A|=5, you can define exactly 2^5 equivalence relations"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "2023s_q05",
+      "year": "2023_sept_A",
+      "topic": "equivalence",
+      "question": "Let r denotes an equivalence relation on the set of all words under the alphabet A=\\ a,b,c \\ such that x r y iff the words x and y have the same length. Which of the following properties does NOT hold?",
+      "options": {
+        "a": "There are infinitely many words in the class [c]",
+        "b": "The equivalence classes [a] and [b] are disjoint",
+        "c": "There are only finite number of elements in the equivalence class [abc]"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "2023s_q06",
+      "year": "2023_sept_A",
+      "topic": "partial_order",
+      "question": "Let r be a partial order on the set of positive natural numbers defined as follows: x r y iff there exists k ∈ ℕ, such that y=x k. Indicate valid sentences.",
+      "options": {
+        "a": "sup(\\ 3,4,9,12,16,36 \\) = 36,",
+        "b": "inf(\\ 4, 12,16,36 \\) = 4,",
+        "c": "r is a well-order"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "2023s_q07",
+      "year": "2023_sept_A",
+      "topic": "partial_order",
+      "question": "Which of the following are partial order relations?",
+      "options": {
+        "a": "r is a binary relation on ℤ, where for all x, y, x r y iff x=y",
+        "b": "r is a binary relation on ℤ, where for all x, y, x r y iff 5|(x-y)",
+        "c": "r is a binary relation on ℤ, where for all x, y, x r y iff |x| ≤ |y|"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "2023s_q08",
+      "year": "2023_sept_A",
+      "topic": "predicates",
+      "question": "Let the predicate K(x,y,t) denote that the lion x drinks coffee type y at time t. Which formula of predicate calculus expresses that ''Every lion never drinks a certain type of coffee.''.",
+      "options": {
+        "a": "∀_x ∃_y ∀_t ¬ K(x,y,t),",
+        "b": "∀_t ∀_x ∃_y ¬ K(x,y,t),",
+        "c": "∃_y ∀_x ∀_t ¬ K(x,y,t)"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "2023s_q09",
+      "year": "2023_sept_A",
+      "topic": "big_o",
+      "question": "Mark the valid properties, if any, of functions.",
+      "options": {
+        "a": "n + √n · (n) = O(4n+7)",
+        "b": "n^5 · (n) = O(lg(n^n)),",
+        "c": "2^n + n^3 +n! = O(2^n · n^3)."
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "2023s_q10",
+      "year": "2023_sept_A",
+      "topic": "logic",
+      "question": "The formula ((p → q) ∧ (¬ p ∨ r)) → (q ∨ r) is",
+      "options": {
+        "a": "a tautology,",
+        "b": "satisfiable,",
+        "c": "falsifiable"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "2023s_q11",
+      "year": "2023_sept_A",
+      "topic": "relations",
+      "question": "The relation r on the set of all integers where (x,y) ∈ r if and only if |x - y| ≥ 10 is",
+      "options": {
+        "a": "reflexive,",
+        "b": "transitive,",
+        "c": "symmetric"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "2023s_q12",
+      "year": "2023_sept_A",
+      "topic": "set_algebra",
+      "question": "For arbitrary sets A, B, and C it holds",
+      "options": {
+        "a": "A∖(B∩ C) = (A∖ B) ∪ (A∖ C),",
+        "b": "if A ∈ B and B ⊆ C, then A ∈ C,",
+        "c": "if A ⊆ B and B ⊆ C, then A ⊆ C"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "2023s_q13",
+      "year": "2023_sept_A",
+      "topic": "pigeonhole",
+      "question": "Using the Pigeonhole Principle you can prove that there are at least two people in California (population: 37 million) with the same x initials who were born on the same day of the year (but not necessarily in the same year) for",
+      "options": {
+        "a": "x=1,",
+        "b": "x=2,",
+        "c": "x=3"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "2023s_q14",
+      "year": "2023_sept_A",
+      "topic": "combinatorics",
+      "question": "In how many ways can 8 passengers get off the bus at 5 stops?",
+      "options": {
+        "a": "(8!)/(5!· 3!),",
+        "b": "S(8,5)· 5!,",
+        "c": "5^8"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "2023s_q15",
+      "year": "2023_sept_A",
+      "topic": "combinatorics",
+      "question": "In how many ways can 8 passengers on a bus get off at 5 stops if at least one passenger must get off at each stop?",
+      "options": {
+        "a": "(8!)/(5!· 3!),",
+        "b": "S(8,5)· 5!,",
+        "c": "5^8"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "2023s_q16",
+      "year": "2023_sept_A",
+      "topic": "combinatorics",
+      "question": "How many solutions are there to the equation x1 + x2 + x3 +x4 = 20, where x1, x2, x3 and x4 are nonnegative integers?",
+      "options": {
+        "a": "4^20,",
+        "b": "(23!)/(20!· 3!),",
+        "c": "(20!)/(16! · 4!)"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "2023s_q17",
+      "year": "2023_sept_A",
+      "topic": "combinatorics",
+      "question": "How many solutions are there to the equation x1 + x2 + x3 = 20, where x1, x2, and x3 are positive integers?",
+      "options": {
+        "a": "(22!)/(20!· 2!),",
+        "b": "S(20,3) · 3!,",
+        "c": "(19!)/(17!· 2!)"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "2023s_q18",
+      "year": "2023_sept_A",
+      "topic": "combinatorics",
+      "question": "In how many ways can 9 different books be distributed among 3 students so that each student gets exactly 3 books?",
+      "options": {
+        "a": "3! · S(9; 3),",
+        "b": "3^9,",
+        "c": "(9!)/(3! · 3! · 3!)"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "2023s_q19",
+      "year": "2023_sept_A",
+      "topic": "well_order",
+      "question": "There is a well ordered set that has",
+      "options": {
+        "a": "no maximal element",
+        "b": "the greatest element but no maximal element",
+        "c": "a maximal element but no the least element"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "2023s_q20",
+      "year": "2023_sept_A",
+      "topic": "combinatorics",
+      "question": "Cards are drawn from a deck of 52 cards with replacements. In how many ways can ten cards be drawn so that the tenth card is not a repetition?",
+      "options": {
+        "a": "52^10,",
+        "b": "52· 51^9,",
+        "c": "(52!)/(10!42!). S(n,k) - the number of ways to partition a set of n objects into k non-empty subsets. ANSWERS: 1ac 2ac 3bc 4bc 5ab 6b 7a 8a 9a 10bc 11c 12abc 13abc 14c 15b 16b 17c 18c 19a 20b"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "examx_q01",
+      "year": "unknown",
+      "topic": "set_algebra",
+      "question": "Let T =1;2;3 and A =i+1; i ;i−1;:::; 1 , then ∪ i i+1 i+1 i+1 i+1",
+      "options": {
+        "a": "(A )=1;1;2;1;3;1, ∩i2T i 2 3 3 4 4",
+        "b": "(A )=1, i2T i",
+        "c": "A =∅. 2 1"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "examx_q02",
+      "year": "unknown",
+      "topic": "relations",
+      "question": "Consider the relation r =(A;B):A∩B =∅ defined in the set 2Z. This relation is",
+      "options": {
+        "a": "reflexive",
+        "b": "symmetric",
+        "c": "transitive"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "examx_q03",
+      "year": "unknown",
+      "topic": "equivalence",
+      "question": "Consider the relation r defined in the set Z such that (x;y)∈r iff 22x2 =4y2, then",
+      "options": {
+        "a": "[1]∪[−1]=Z\\0",
+        "b": "[1]=[−1]",
+        "c": "[1]∩[−1]=0"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "examx_q04",
+      "year": "unknown",
+      "topic": "functions",
+      "question": "Consider the function f :R→R, f(x)=x3−3, then",
+      "options": {
+        "a": "f is a bijection",
+        "b": "f−1(x)= 1 , x3− √3",
+        "c": "f−1(Y)=[1; 35] for Y =[−2;2]"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "examx_q05",
+      "year": "unknown",
+      "topic": "partial_order",
+      "question": "Consider the relation r =(x;y):x|y defined in the set U =1;2;:::;100, then",
+      "options": {
+        "a": "r is a linear order in U",
+        "b": "1;2;:::;100 is the maximal element in U",
+        "c": "sup2;4;6;8=8"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "examx_q06",
+      "year": "unknown",
+      "topic": "logic",
+      "question": "The formula (p→(q →r))→((p∧q)→r)",
+      "options": {
+        "a": "is a propositional tautology",
+        "b": "is satisfied by the valuation v(p)=v(q)=v(r)=0",
+        "c": "is falsified by the valuation v(p)=v(q)=v(r)=1"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "examx_q07",
+      "year": "unknown",
+      "topic": "predicates",
+      "question": "The formula ∀k∃p(pk =1) is true in the set",
+      "options": {
+        "a": "N",
+        "b": "Z−",
+        "c": "R+."
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "examx_q08",
+      "year": "unknown",
+      "topic": "partial_order",
+      "question": "Let r be a relation such that r = (a;b)∈N2 :b|a , then",
+      "options": {
+        "a": "r is not a partial order in N",
+        "b": "r is a linear order in N",
+        "c": "r−1 is a well order in N 1 dr Magdalena Kacprzak Exam Discrete Mathematics"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "examx_q09",
+      "year": "unknown",
+      "topic": "partial_order",
+      "question": "In every partially ordered set there exists",
+      "options": {
+        "a": "at least one maximal element",
+        "b": "at least one minimal element",
+        "c": "the least element or the greatest element"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "examx_q10",
+      "year": "unknown",
+      "topic": "relations",
+      "question": "The set of all asymmetric relations defined in a set A is a subset of the set of all relations defined in A which are",
+      "options": {
+        "a": "reflexive",
+        "b": "irreflexive",
+        "c": "antisymmetric"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "examx_q11",
+      "year": "unknown",
+      "topic": "countable",
+      "question": "Which of the following sets are uncountable?",
+      "options": {
+        "a": "the set of all subsets of any countable set",
+        "b": "the set of all subsets of Z",
+        "c": "the power set of R"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "examx_q12",
+      "year": "unknown",
+      "topic": "recursion",
+      "question": "The sequence a(n)=2n+1 is a solution of the recursion a(0)=2, a(1)=4, a(n)=Ca(n−1)+Ba(n−2) when",
+      "options": {
+        "a": "C =−2, B =−1",
+        "b": "C =B =1",
+        "c": "C =−2, B =8"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "examx_q13",
+      "year": "unknown",
+      "topic": "combinatorics",
+      "question": "In how many ways you can split the 9 different cans between 5 people, if each is to receive at least one can?",
+      "options": {
+        "a": "V5",
+        "b": "S(9;5)",
+        "c": "5!·S(9;5) 9"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "examx_q14",
+      "year": "unknown",
+      "topic": "combinatorics",
+      "question": "How many ways are there to arrange 5 cans of Coca-Cola, 4 cans of Pepsi and 2 cans of mineral water in a row?",
+      "options": {
+        "a": "11!",
+        "b": "11!",
+        "c": "5!4!2! 5!4!2!"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "examx_q15",
+      "year": "unknown",
+      "topic": "combinatorics",
+      "question": "Consider binary sequences of a length of 100, in which the digit 1 occurs exactly 10 times. How many such sequences are there? ( ) ( ) 100 100",
+      "options": {
+        "a": "",
+        "b": "100!",
+        "c": "10 10!90! 90"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "examx_q16",
+      "year": "unknown",
+      "topic": "combinatorics",
+      "question": "How many ways are there to split 3 different prizes between 14 students, assuming that one person can receive at most one prize?",
+      "options": {
+        "a": "C3",
+        "b": "V3",
+        "c": "V 3 14 14 14"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "examx_q17",
+      "year": "unknown",
+      "topic": "pigeonhole",
+      "question": "Dirichlet’s box principle allows to prove that in the power set of the set A=5;6;:::;n there exist at least two sets with the same sum of elements (e.g. the sum of elements of the set 4;11;13 is 4+11+13=28), when",
+      "options": {
+        "a": "n=10",
+        "b": "n=7",
+        "c": "n=12"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "examx_q18",
+      "year": "unknown",
+      "topic": "graphs",
+      "question": "The graph of any reflexive and symmetric relation is",
+      "options": {
+        "a": "acyclic",
+        "b": "connected",
+        "c": "a tree"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "examx_q19",
+      "year": "unknown",
+      "topic": "graphs",
+      "question": "Consider the graph G = (V;E) with V = 1;2;3;4 and E = (1;2);(2;3);(2;4). This graph is isomorphic to",
+      "options": {
+        "a": "G=(V;E), where V =1;2;3;4, E =(2;1);(1;3);(1;4)",
+        "b": "G=(V;E), where V =1;2;3;4, E =(2;1);(3;2);(4;2)",
+        "c": "G=(V;E), where V =1;2;3;4, E =(1;3);(3;2);(3;4)"
+      },
+      "correct": null,
+      "explanation": ""
+    },
+    {
+      "id": "examx_q20",
+      "year": "unknown",
+      "topic": "probability",
+      "question": "Distribution of the random variable X is defined by the probability function described in the following table x 1 2 3 4 i p 0,1 0,2 0,3 0,4 i then",
+      "options": {
+        "a": "E(X)=3",
+        "b": "V(X)=7",
+        "c": "F(2,5) = 0,3 2 dr Magdalena Kacprzak"
+      },
+      "correct": null,
+      "explanation": ""
+    }
+  ]
+}

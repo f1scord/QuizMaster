@@ -4,7 +4,7 @@ import traceback
 from tkinter import ttk, messagebox
 
 from deck import Deck
-from screens import ApiKeyDialog, DeckScreen, GenerateScreen, StudyScreen
+from screens import ApiKeyDialog, DeckScreen, GenerateScreen, QuizScreen, StudyScreen
 from storage import load_config, load_deck, save_config, save_deck
 
 BG     = "#111118"
@@ -18,7 +18,7 @@ FONT   = "Segoe UI"
 class App:
     def __init__(self):
         self.root = tk.Tk()
-        self.root.title("AutoFlash")
+        self.root.title("QuizMaster")
         self.root.geometry("640x590")
         self.root.configure(bg=BG)
         self.root.resizable(False, False)
@@ -58,6 +58,7 @@ class App:
 
         for name, cmd in [("Generate", self._show_generate),
                           ("Deck", self._show_deck),
+                          ("Quiz", self._show_quiz),
                           ("Study", self._show_study)]:
             b = tk.Button(nav, text=name, command=cmd,
                           bg=NAV_BG, fg=MUTED, relief="flat",
@@ -96,6 +97,16 @@ class App:
             s = DeckScreen(self.root, self.deck, on_delete=self._save)
             self._switch(s)
             self._set_active("Deck")
+        except Exception:
+            messagebox.showerror("Error", traceback.format_exc())
+
+    def _show_quiz(self) -> None:
+        try:
+            from quiz import QuizEngine
+            engine = QuizEngine()
+            s = QuizScreen(self.root, engine=engine)
+            self._switch(s)
+            self._set_active("Quiz")
         except Exception:
             messagebox.showerror("Error", traceback.format_exc())
 
