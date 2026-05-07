@@ -192,7 +192,7 @@ class RoundedButton(tk.Canvas):
 
         super().__init__(master, width=w, height=h,
                          bg=pbg, highlightthickness=0, **kwargs)
-        self._w, self._h = w, h
+        self._bw, self._bh = w, h   # btn dimensions (self._w is reserved by Tkinter)
 
         self._draw(self._bg_norm)
         self.bind("<Enter>",           lambda _: self._on_enter())
@@ -203,7 +203,7 @@ class RoundedButton(tk.Canvas):
 
     def _draw(self, bg: str) -> None:
         self.delete("all")
-        w, h, r = self._w, self._h, self._r
+        w, h, r = self._bw, self._bh, self._r
         pts = _rounded_pts(1, 1, w - 1, h - 1, r)
         self.create_polygon(pts, fill=bg, outline="", smooth=True)
         weight = self._fs[2] if len(self._fs) > 2 else "normal"
