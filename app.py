@@ -6,6 +6,7 @@ from tkinter import ttk, messagebox
 from deck import Deck
 from screens import ApiKeyDialog, DeckScreen, GenerateScreen, QuizScreen, StudyScreen
 from storage import load_config, load_deck, save_config, save_deck
+from widgets import RoundedButton
 
 BG     = "#111118"
 NAV_BG = "#16161f"
@@ -49,7 +50,7 @@ class App:
             self._current_screen.set_api_key(key)
 
     def _build_nav(self) -> None:
-        nav = tk.Frame(self.root, bg=NAV_BG, height=46)
+        nav = tk.Frame(self.root, bg=NAV_BG, height=50)
         nav.pack(fill="x")
         nav.pack_propagate(False)
 
@@ -60,20 +61,19 @@ class App:
                           ("Deck", self._show_deck),
                           ("Quiz", self._show_quiz),
                           ("Study", self._show_study)]:
-            b = tk.Button(nav, text=name, command=cmd,
-                          bg=NAV_BG, fg=MUTED, relief="flat",
-                          font=(FONT, 11), padx=20, pady=10,
-                          cursor="hand2", bd=0,
-                          activebackground=NAV_BG,
-                          activeforeground=ACCENT,
-                          highlightthickness=0)
-            b.pack(side="left")
+            b = RoundedButton(nav, text=name, command=cmd,
+                              bg=NAV_BG, fg=MUTED,
+                              font_spec=(FONT, 11),
+                              padx=18, pady=8, radius=8)
+            b.pack(side="left", padx=2, pady=5)
             self._nav_btns[name] = b
 
     def _set_active(self, name: str) -> None:
         for n, b in self._nav_btns.items():
-            b.configure(fg=ACCENT if n == name else MUTED,
-                        font=(FONT, 11, "bold" if n == name else "normal"))
+            if n == name:
+                b.configure(bg="#23233a", fg=ACCENT)
+            else:
+                b.configure(bg=NAV_BG, fg=MUTED)
 
     def _switch(self, screen: tk.Frame) -> None:
         if self._current_screen:

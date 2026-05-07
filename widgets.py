@@ -139,6 +139,127 @@ class FlipCard(tk.Canvas):
         self.flip()
 
 
+def _lighten(color: str, amount: int = 22) -> str:
+    r = min(255, int(color[1:3], 16) + amount)
+    g = min(255, int(color[3:5], 16) + amount)
+    b = min(255, int(color[5:7], 16) + amount)
+    return f"#{r:02x}{g:02x}{b:02x}"
+
+
+def _darken(color: str, amount: int = 18) -> str:
+    r = max(0, int(color[1:3], 16) - amount)
+    g = max(0, int(color[3:5], 16) - amount)
+    b = max(0, int(color[5:7], 16) - amount)
+    return f"#{r:02x}{g:02x}{b:02x}"
+
+
+class RoundedButton(tk.Canvas):
+    """Canvas-drawn button with rounded corners — works correctly on macOS."""
+
+    _SKIP = frozenset({
+        "activebackground", "activeforeground", "relief", "bd", "borderwidth",
+        "anchor", "wraplength", "justify", "highlightthickness",
+        "highlightcolor", "highlightbackground",
+    })
+
+    def __init__(self, master, text="", command=None,
+                 bg="#7b7fff", fg="#ffffff",
+                 font_spec=None, radius=11,
+                 padx=18, pady=9, min_width=0, **kwargs):
+        import tkinter.font as tkfont
+
+        self._text     = text
+        self._command  = command
+        self._bg_norm  = bg
+        self._bg_hov   = _lighten(bg, 22)
+        self._bg_press = _darken(bg, 18)
+        self._fg       = fg
+        self._r        = radius
+        self._enabled  = True
+        self._fs       = font_spec or (FONT, 10, "bold")
+
+        fobj = tkfont.Font(family=self._fs[0], size=abs(self._fs[1]),
+                           weight=self._fs[2] if len(self._fs) > 2 else "normal")
+        tw = fobj.measure(text) + 6   # +6 for emoji/kerning headroom
+        th = fobj.metrics("linespace")
+        w  = max(min_width, tw + padx * 2)
+        h  = th + pady * 2
+
+        try:
+            pbg = master.cget("bg")
+        except Exception:
+            pbg = "#111118"
+
+        super().__init__(master, width=w, height=h,
+                         bg=pbg, highlightthickness=0, **kwargs)
+        self._w, self._h = w, h
+
+        self._draw(self._bg_norm)
+        self.bind("<Enter>",           lambda _: self._on_enter())
+        self.bind("<Leave>",           lambda _: self._on_leave())
+        self.bind("<Button-1>",        lambda _: self._on_press())
+        self.bind("<ButtonRelease-1>", lambda _: self._on_release())
+        super().configure(cursor="hand2")
+
+    def _draw(self, bg: str) -> None:
+        self.delete("all")
+        w, h, r = self._w, self._h, self._r
+        pts = _rounded_pts(1, 1, w - 1, h - 1, r)
+        self.create_polygon(pts, fill=bg, outline="", smooth=True)
+        weight = self._fs[2] if len(self._fs) > 2 else "normal"
+        self.create_text(w // 2, h // 2, text=self._text,
+                         fill=self._fg if self._enabled else "#55556a",
+                         font=(self._fs[0], self._fs[1], weight))
+
+    def _on_enter(self):
+        if self._enabled:
+            self._draw(self._bg_hov)
+
+    def _on_leave(self):
+        if self._enabled:
+            self._draw(self._bg_norm)
+
+    def _on_press(self):
+        if self._enabled:
+            self._draw(self._bg_press)
+
+    def _on_release(self):
+        if self._enabled:
+            self._draw(self._bg_norm)
+            if self._command:
+                self._command()
+
+    def configure(self, **kw):
+        for k in list(kw):
+            if k in self._SKIP:
+                kw.pop(k)
+        redraw = False
+        if "text"    in kw: self._text = kw.pop("text"); redraw = True
+        if "command" in kw: self._command = kw.pop("command")
+        if "state"   in kw:
+            self._enabled = kw.pop("state") == "normal"
+            super().configure(cursor="hand2" if self._enabled else "")
+            redraw = True
+        if "bg"      in kw:
+            self._bg_norm  = kw.pop("bg")
+            self._bg_hov   = _lighten(self._bg_norm, 22)
+            self._bg_press = _darken(self._bg_norm, 18)
+            redraw = True
+        if "fg"      in kw: self._fg = kw.pop("fg"); redraw = True
+        if "font"    in kw: kw.pop("font")
+        if kw: super().configure(**kw)
+        if redraw: self._draw(self._bg_norm)
+
+    config = configure
+
+    def cget(self, key):
+        if key == "text":  return self._text
+        if key == "state": return "normal" if self._enabled else "disabled"
+        if key == "fg":    return self._fg
+        if key == "bg":    return self._bg_norm
+        return super().cget(key)
+
+
 class AnimatedProgress(tk.Canvas):
     def __init__(self, master, width=540, height=5, **kwargs):
         super().__init__(master, width=width, height=height,

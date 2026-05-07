@@ -8,7 +8,7 @@ from agent import CardGenerator
 from deck import FlashCard
 from decorators import handle_errors, log_action
 from parser import parse_file
-from widgets import AnimatedProgress, FlipCard, FONT
+from widgets import AnimatedProgress, FlipCard, FONT, RoundedButton, _lighten, _darken
 
 
 BG      = "#111118"
@@ -24,17 +24,35 @@ YELLOW  = "#facc15"
 ENTRY   = "#1c1c28"
 
 
-def _btn(btn: tk.Button, primary: bool = False, danger: bool = False) -> None:
+def _rbtn(parent, text: str, command=None, *,
+          primary: bool = False,
+          danger: bool = False,
+          green: bool = False,
+          muted: bool = False,
+          min_width: int = 0,
+          font_spec=None,
+          radius: int = 11,
+          padx: int = 18,
+          pady: int = 9) -> RoundedButton:
+    """Factory for consistently styled RoundedButton instances."""
     if primary:
-        bg, fg, abg = ACCENT, "#fff", "#9999ff"
+        bg, fg = ACCENT, "#ffffff"
+        fs = font_spec or (FONT, 10, "bold")
     elif danger:
-        bg, fg, abg = "#3a1a1a", RED, RED
+        bg, fg = "#3a1a1a", RED
+        fs = font_spec or (FONT, 10)
+    elif green:
+        bg, fg = "#1a3828", GREEN
+        fs = font_spec or (FONT, 10)
+    elif muted:
+        bg, fg = SURFACE, MUTED
+        fs = font_spec or (FONT, 10)
     else:
-        bg, fg, abg = SURFACE, TEXT, ACCENT
-    btn.configure(bg=bg, fg=fg, activebackground=abg, activeforeground="#fff",
-                  relief="flat", padx=16, pady=8, cursor="hand2",
-                  font=(FONT, 10, "bold" if primary else "normal"),
-                  bd=0, highlightthickness=0)
+        bg, fg = SURFACE, TEXT
+        fs = font_spec or (FONT, 10)
+    return RoundedButton(parent, text=text, command=command,
+                         bg=bg, fg=fg, font_spec=fs, radius=radius,
+                         min_width=min_width, padx=padx, pady=pady)
 
 
 class ApiKeyDialog(tk.Toplevel):
@@ -52,16 +70,16 @@ class ApiKeyDialog(tk.Toplevel):
 
     def _build(self, key: str) -> None:
         tk.Label(self, text="LLM API Key", bg=BG, fg=ACCENT,
-                 font=(FONT, 15, "bold")).pack(padx=30, pady=(22, 4))
+                 font=(FONT, 15, "bold")).pack(padx=36, pady=(26, 4))
         tk.Label(self, text="paste key from your provider dashboard",
-                 bg=BG, fg=MUTED, font=(FONT, 10)).pack(padx=30, pady=(0, 14))
+                 bg=BG, fg=MUTED, font=(FONT, 10)).pack(padx=36, pady=(0, 14))
 
         self._entry = tk.Entry(self, width=50, bg=SURFACE, fg=TEXT,
                                insertbackground=TEXT, font=(FONT, 11),
                                relief="flat", show="•", bd=0,
                                highlightthickness=1, highlightcolor=ACCENT,
                                highlightbackground=BORDER)
-        self._entry.pack(padx=30, ipady=7)
+        self._entry.pack(padx=36, ipady=8)
         self._entry.insert(0, key)
 
         show = tk.BooleanVar(value=False)
@@ -70,15 +88,13 @@ class ApiKeyDialog(tk.Toplevel):
                        font=(FONT, 10),
                        command=lambda: self._entry.configure(
                            show="" if show.get() else "•")).pack(
-            padx=30, pady=6, anchor="w")
+            padx=36, pady=6, anchor="w")
 
         row = tk.Frame(self, bg=BG)
-        row.pack(pady=(6, 22))
-        cancel = tk.Button(row, text="Cancel", command=self.destroy)
-        _btn(cancel)
+        row.pack(pady=(8, 26))
+        cancel = _rbtn(row, "Cancel", self.destroy, min_width=96)
         cancel.pack(side="left", padx=6)
-        save = tk.Button(row, text="Save", command=self._save)
-        _btn(save, primary=True)
+        save = _rbtn(row, "Save", self._save, primary=True, min_width=96)
         save.pack(side="left", padx=6)
         self._entry.bind("<Return>", lambda _: self._save())
 
@@ -106,59 +122,37 @@ class AddCardDialog(tk.Toplevel):
 
     def _build(self) -> None:
         tk.Label(self, text="Add card", bg=BG, fg=ACCENT,
-                 font=(FONT, 15, "bold")).pack(padx=18, pady=(16, 10))
+                 font=(FONT, 15, "bold")).pack(padx=24, pady=(20, 12))
 
         body = tk.Frame(self, bg=BG)
-        body.pack(padx=18, pady=(0, 6), fill="x")
+        body.pack(padx=24, pady=(0, 6), fill="x")
 
-        tk.Label(body, text="Front", bg=BG, fg=MUTED,
-                 font=(FONT, 10)).pack(anchor="w")
-        self._front = tk.Entry(body, bg=SURFACE, fg=TEXT, insertbackground=TEXT,
-                               font=(FONT, 11), relief="flat", bd=0,
-                               highlightthickness=1, highlightbackground=BORDER,
-                               highlightcolor=ACCENT)
-        self._front.pack(fill="x", ipady=5, pady=(0, 8))
-
-        tk.Label(body, text="Back", bg=BG, fg=MUTED,
-                 font=(FONT, 10)).pack(anchor="w")
-        self._back = tk.Entry(body, bg=SURFACE, fg=TEXT, insertbackground=TEXT,
-                              font=(FONT, 11), relief="flat", bd=0,
-                              highlightthickness=1, highlightbackground=BORDER,
-                              highlightcolor=ACCENT)
-        self._back.pack(fill="x", ipady=5, pady=(0, 8))
-
-        tk.Label(body, text="Topic", bg=BG, fg=MUTED,
-                 font=(FONT, 10)).pack(anchor="w")
-        self._topic = tk.Entry(body, bg=SURFACE, fg=TEXT, insertbackground=TEXT,
-                               font=(FONT, 11), relief="flat", bd=0,
-                               highlightthickness=1, highlightbackground=BORDER,
-                               highlightcolor=ACCENT)
-        self._topic.pack(fill="x", ipady=5)
+        for label, attr in [("Front", "_front"), ("Back", "_back"), ("Topic", "_topic")]:
+            tk.Label(body, text=label, bg=BG, fg=MUTED,
+                     font=(FONT, 10)).pack(anchor="w")
+            e = tk.Entry(body, bg=SURFACE, fg=TEXT, insertbackground=TEXT,
+                         font=(FONT, 11), relief="flat", bd=0,
+                         highlightthickness=1, highlightbackground=BORDER,
+                         highlightcolor=ACCENT)
+            e.pack(fill="x", ipady=6, pady=(0, 10))
+            setattr(self, attr, e)
+            e.bind("<Return>", lambda _: self._save())
 
         row = tk.Frame(self, bg=BG)
-        row.pack(pady=(12, 16))
-        cancel = tk.Button(row, text="Cancel", command=self.destroy)
-        _btn(cancel)
+        row.pack(pady=(4, 20))
+        cancel = _rbtn(row, "Cancel", self.destroy, min_width=96)
         cancel.pack(side="left", padx=6)
-        save = tk.Button(row, text="Save", command=self._save)
-        _btn(save, primary=True)
+        save = _rbtn(row, "Save", self._save, primary=True, min_width=96)
         save.pack(side="left", padx=6)
-
-        self._front.bind("<Return>", lambda _: self._save())
-        self._back.bind("<Return>", lambda _: self._save())
-        self._topic.bind("<Return>", lambda _: self._save())
 
     def _save(self) -> None:
         front = self._front.get().strip()
-        back = self._back.get().strip()
+        back  = self._back.get().strip()
         topic = self._topic.get().strip()
         if not self._has_required_fields(front, back):
             messagebox.showwarning("Missing fields", "Front and Back are required.")
             return
-
-        # keep manual card creation explicit so it's easy to explain in defense
         card = self._build_manual_card(front=front, back=back, topic=topic)
-
         self._deck.add(card)
         self._deck.save(self._DECK_PATH)
         self.destroy()
@@ -171,13 +165,8 @@ class AddCardDialog(tk.Toplevel):
 
     @staticmethod
     def _build_manual_card(front: str, back: str, topic: str) -> FlashCard:
-        card = FlashCard(
-            front=front,
-            back=back,
-            topic=topic,
-            difficulty="medium",
-            source_file="manual",
-        )
+        card = FlashCard(front=front, back=back, topic=topic,
+                         difficulty="medium", source_file="manual")
         card.status = "new"
         card.times_reviewed = 0
         card.correct_answers = 0
@@ -210,35 +199,27 @@ class GenerateScreen(tk.Frame):
                              highlightthickness=1,
                              highlightbackground=BORDER,
                              highlightcolor=ACCENT)
-        self._text.pack(fill="x", padx=28, pady=(0, 12))
+        self._text.pack(fill="x", padx=28, pady=(0, 14))
 
         row = tk.Frame(self, bg=BG)
         row.pack()
 
-        open_b = tk.Button(row, text="📂  Open lecture…", command=self._open_file)
-        _btn(open_b)
+        open_b = _rbtn(row, "📂  Open lecture…", self._open_file)
         open_b.pack(side="left", padx=5)
 
-        gen_b = tk.Button(row, text="⚡  Generate", command=self._generate)
-        _btn(gen_b, primary=True)
+        gen_b = _rbtn(row, "⚡  Generate", self._generate, primary=True)
         gen_b.pack(side="left", padx=5)
 
-        key_b = tk.Button(row, text="⚙", command=self._open_key_dialog,
-                          width=3)
-        _btn(key_b)
+        key_b = _rbtn(row, "⚙", self._open_key_dialog, min_width=44)
         key_b.pack(side="left", padx=5)
 
-        self._status = tk.Label(self, text="", bg=BG, fg=MUTED,
-                                font=(FONT, 10))
+        self._status = tk.Label(self, text="", bg=BG, fg=MUTED, font=(FONT, 10))
         self._status.pack(pady=8)
 
-        self._study_btn = tk.Button(self, text="Study cards  →",
-                                    command=self._on_study)
-        _btn(self._study_btn, primary=True)
+        self._study_btn = _rbtn(self, "Study cards  →", self._on_study, primary=True)
 
         if not self._generator.api_key:
-            self._status.configure(
-                text="No API key — click ⚙", fg=YELLOW)
+            self._status.configure(text="No API key — click ⚙", fg=YELLOW)
 
     def set_api_key(self, key: str) -> None:
         self._generator.api_key = key
@@ -250,7 +231,8 @@ class GenerateScreen(tk.Frame):
         self._generator.api_key = key
         self._on_key_change(key)
         self._status.configure(
-            text="Key saved ✓" if key else "Key cleared", fg=GREEN if key else RED)
+            text="Key saved ✓" if key else "Key cleared",
+            fg=GREEN if key else RED)
 
     @handle_errors
     @log_action
@@ -265,7 +247,6 @@ class GenerateScreen(tk.Frame):
         pq: queue.Queue = queue.Queue()
 
         def worker():
-            # parse in a background thread so ui stays responsive
             try:
                 pq.put(("ok", parse_file(path)))
             except Exception as e:
@@ -274,7 +255,6 @@ class GenerateScreen(tk.Frame):
         threading.Thread(target=worker, daemon=True).start()
 
         def poll():
-            # poll queue until worker returns parsed text or error
             try:
                 r, p = pq.get_nowait()
             except queue.Empty:
@@ -365,9 +345,9 @@ class DeckScreen(tk.Frame):
                      highlightcolor=ACCENT)
         e.pack(side="left", fill="x", expand=True, padx=(6, 0), ipady=5)
 
-        add_b = tk.Button(search_row, text="+ Add card", command=self._open_add_dialog)
-        _btn(add_b, primary=True)
-        add_b.pack(side="left", padx=(8, 0))
+        add_b = _rbtn(search_row, "+ Add card", self._open_add_dialog,
+                      primary=True, padx=14, pady=6)
+        add_b.pack(side="left", padx=(10, 0))
 
         lf = tk.Frame(self, bg=BG)
         lf.pack(fill="both", expand=True, padx=28, pady=(0, 4))
@@ -386,8 +366,7 @@ class DeckScreen(tk.Frame):
         bot = tk.Frame(self, bg=BG)
         bot.pack(fill="x", padx=28, pady=8)
 
-        del_b = tk.Button(bot, text="🗑  Delete", command=self._delete)
-        _btn(del_b, danger=True)
+        del_b = _rbtn(bot, "🗑  Delete", self._delete, danger=True, padx=14, pady=7)
         del_b.pack(side="left")
 
         self._info = tk.Label(bot, text="", bg=BG, fg=MUTED, font=(FONT, 10))
@@ -452,16 +431,12 @@ class StudyScreen(tk.Frame):
         row = tk.Frame(self, bg=BG)
         row.pack(pady=14)
 
-        self._forgot_b = tk.Button(row, text="✗  Forgot",
-                                                                     command=self._forgot)
-        _btn(self._forgot_b, danger=True)
+        self._forgot_b = _rbtn(row, "✗  Forgot", self._forgot,
+                                danger=True, min_width=110)
         self._forgot_b.pack(side="left", padx=10)
 
-        self._knew_b = tk.Button(row, text="✓  Knew it",
-                                                                 command=self._knew_it)
-        _btn(self._knew_b, primary=True)
-        self._knew_b.configure(bg="#1a3828", fg=GREEN,
-                               activebackground=GREEN, activeforeground="#000")
+        self._knew_b = _rbtn(row, "✓  Knew it", self._knew_it,
+                              green=True, min_width=110)
         self._knew_b.pack(side="left", padx=10)
 
         self.bind_all("<space>", lambda _: self._card.flip())
@@ -493,7 +468,6 @@ class StudyScreen(tk.Frame):
     def _ans(self, knew: bool) -> None:
         if self._idx >= len(self._cards):
             return
-        # one answer updates deck state and moves session forward
         self._deck.mark(self._cards[self._idx].id, knew)
         self._idx += 1
         if self._idx >= len(self._cards):
@@ -512,15 +486,14 @@ class StudyScreen(tk.Frame):
         if self._deck.stats()["total"] > 0:
             tk.Label(self, text="All cards already known — great job!",
                      bg=BG, fg=GREEN, font=(FONT, 11)).pack(pady=6)
-        b = tk.Button(self, text="Back", command=self._on_done)
-        _btn(b, primary=True)
+        b = _rbtn(self, "Back", self._on_done, primary=True, min_width=110)
         b.pack(pady=20)
 
     def _stats(self) -> None:
         for w in self.winfo_children():
             w.pack_forget()
 
-        st = self._deck.stats()
+        st  = self._deck.stats()
         acc = st["accuracy"]
 
         outer = tk.Frame(self, bg=BG)
@@ -548,8 +521,7 @@ class StudyScreen(tk.Frame):
             tk.Label(outer, text=by, bg=BG, fg=MUTED, font=(FONT, 9),
                      wraplength=480, justify="center").pack(pady=8)
 
-        b = tk.Button(outer, text="Back to deck", command=self._on_done)
-        _btn(b, primary=True)
+        b = _rbtn(outer, "Back to deck", self._on_done, primary=True, min_width=130)
         b.pack(pady=12)
 
 
@@ -569,7 +541,7 @@ class QuizScreen(tk.Frame):
         self._idx = 0
         self._selected: set = set()
         self._checked = False
-        self._mode = "learn"          # "learn" or "mock"
+        self._mode = "learn"
         self._topic_var = tk.StringVar(value="all")
         self._build()
         self._load_learn_queue()
@@ -584,22 +556,18 @@ class QuizScreen(tk.Frame):
         tab_f = tk.Frame(top, bg=BG)
         tab_f.pack(side="left")
 
-        self._tab_learn = tk.Button(tab_f, text="Learn",
-                                    command=self._switch_learn,
-                                    bg=ACCENT, fg="#fff",
-                                    font=(FONT, 10, "bold"),
-                                    relief="flat", padx=14, pady=6,
-                                    cursor="hand2", bd=0,
-                                    highlightthickness=0)
-        self._tab_learn.pack(side="left", padx=(0, 2))
+        self._tab_learn = RoundedButton(tab_f, text="Learn",
+                                        command=self._switch_learn,
+                                        bg=ACCENT, fg="#fff",
+                                        font_spec=(FONT, 10, "bold"),
+                                        padx=14, pady=6)
+        self._tab_learn.pack(side="left", padx=(0, 4))
 
-        self._tab_mock = tk.Button(tab_f, text="Mock Exam",
-                                   command=self._switch_mock,
-                                   bg=SURFACE, fg=MUTED,
-                                   font=(FONT, 10),
-                                   relief="flat", padx=14, pady=6,
-                                   cursor="hand2", bd=0,
-                                   highlightthickness=0)
+        self._tab_mock = RoundedButton(tab_f, text="Mock Exam",
+                                       command=self._switch_mock,
+                                       bg=SURFACE, fg=MUTED,
+                                       font_spec=(FONT, 10),
+                                       padx=14, pady=6)
         self._tab_mock.pack(side="left")
 
         # topic filter (learn mode only)
@@ -635,7 +603,7 @@ class QuizScreen(tk.Frame):
                                wraplength=560, justify="left")
         self._q_lbl.pack(padx=24, pady=(6, 10), anchor="w")
 
-        # ── option buttons (3 slots) ──
+        # ── option buttons (3 slots, tk.Button with macOS fix) ──
         self._opt_frames: list[tk.Frame] = []
         self._opt_btns: list[tk.Button] = []
         opt_grid = tk.Frame(self, bg=BG)
@@ -652,32 +620,24 @@ class QuizScreen(tk.Frame):
                           font=(FONT, 10), relief="flat",
                           padx=10, pady=8, cursor="hand2",
                           bd=0, highlightthickness=0,
+                          highlightbackground=CARD_S,
                           command=lambda idx=i: self._toggle(idx))
             b.pack(fill="both", expand=True)
             self._opt_frames.append(f)
             self._opt_btns.append(b)
 
-        # "Don't know" button sits in 4th slot on same grid
+        # "Don't know" button — 4th slot
         dont_f = tk.Frame(opt_grid, bg=BG)
         dont_f.grid(row=1, column=1, padx=6, pady=4, sticky="e")
-        self._dont_btn = tk.Button(dont_f, text="Don't know",
-                                   command=self._dont_know,
-                                   bg=BG, fg=MUTED,
-                                   font=(FONT, 10), relief="flat",
-                                   padx=10, pady=8, cursor="hand2",
-                                   bd=0, highlightthickness=0)
+        self._dont_btn = _rbtn(dont_f, "Don't know", self._dont_know,
+                                muted=True, padx=12, pady=7)
         self._dont_btn.pack()
 
         # ── check button ──
-        self._check_btn = tk.Button(self, text="CHECK ANSWER",
-                                    command=self._check,
-                                    font=(FONT, 11, "bold"),
-                                    bg=ACCENT, fg="#fff",
-                                    relief="flat", padx=22, pady=10,
-                                    cursor="hand2", bd=0,
-                                    highlightthickness=0,
-                                    activebackground="#9999ff",
-                                    activeforeground="#fff")
+        self._check_btn = _rbtn(self, "CHECK ANSWER", self._check,
+                                 primary=True, min_width=180,
+                                 font_spec=(FONT, 11, "bold"),
+                                 padx=22, pady=10)
         self._check_btn.pack(pady=(14, 6))
 
         # ── explanation ──
@@ -690,16 +650,14 @@ class QuizScreen(tk.Frame):
 
         # ── got it / still learning buttons ──
         self._feedback_frame = tk.Frame(self, bg=BG)
-        still = tk.Button(self._feedback_frame, text="✗  Still learning",
-                          command=lambda: self._feedback(False))
-        _btn(still, danger=True)
+        still = _rbtn(self._feedback_frame, "✗  Still learning",
+                      lambda: self._feedback(False),
+                      danger=True, min_width=140)
         still.pack(side="left", padx=10)
 
-        got = tk.Button(self._feedback_frame, text="✓  Got it",
-                        command=lambda: self._feedback(True))
-        _btn(got, primary=True)
-        got.configure(bg="#1a3828", fg=GREEN,
-                      activebackground=GREEN, activeforeground="#000")
+        got = _rbtn(self._feedback_frame, "✓  Got it",
+                    lambda: self._feedback(True),
+                    green=True, min_width=110)
         got.pack(side="left", padx=10)
 
         # ── empty state ──
@@ -713,21 +671,20 @@ class QuizScreen(tk.Frame):
 
     def _switch_learn(self) -> None:
         self._mode = "learn"
-        self._tab_learn.configure(bg=ACCENT, fg="#fff", font=(FONT, 10, "bold"))
-        self._tab_mock.configure(bg=SURFACE, fg=MUTED, font=(FONT, 10))
+        self._tab_learn.configure(bg=ACCENT, fg="#fff")
+        self._tab_mock.configure(bg=SURFACE, fg=MUTED)
         self._topic_cb.configure(state="readonly")
         self._load_learn_queue()
 
     def _switch_mock(self) -> None:
         self._mode = "mock"
-        self._tab_learn.configure(bg=SURFACE, fg=MUTED, font=(FONT, 10))
-        self._tab_mock.configure(bg=ACCENT, fg="#fff", font=(FONT, 10, "bold"))
+        self._tab_learn.configure(bg=SURFACE, fg=MUTED)
+        self._tab_mock.configure(bg=ACCENT, fg="#fff")
         self._topic_cb.configure(state="disabled")
         screen = MockExamScreen(self.master,
                                 questions=self._engine.mock_exam(),
                                 engine=self._engine,
                                 on_back=self._switch_learn)
-        # replace self in parent
         self.pack_forget()
         screen.pack(fill="both", expand=True)
 
@@ -781,7 +738,8 @@ class QuizScreen(tk.Frame):
             if i < len(options):
                 key, text = options[i]
                 btn.configure(text=f"{key})  {text}",
-                              bg=CARD_S, fg=TEXT, state="normal")
+                              bg=CARD_S, fg=TEXT, state="normal",
+                              highlightbackground=CARD_S)
                 frame.configure(bg=BORDER)
                 btn.pack(fill="both", expand=True)
                 frame.grid()
@@ -806,11 +764,11 @@ class QuizScreen(tk.Frame):
         key = options[idx]
         if key in self._selected:
             self._selected.discard(key)
-            self._opt_btns[idx].configure(bg=CARD_S)
+            self._opt_btns[idx].configure(bg=CARD_S, highlightbackground=CARD_S)
             self._opt_frames[idx].configure(bg=BORDER)
         else:
             self._selected.add(key)
-            self._opt_btns[idx].configure(bg="#2a2a55")
+            self._opt_btns[idx].configure(bg="#2a2a55", highlightbackground="#2a2a55")
             self._opt_frames[idx].configure(bg=ACCENT)
 
     def _dont_know(self) -> None:
@@ -831,22 +789,19 @@ class QuizScreen(tk.Frame):
         for i, key in enumerate(options):
             if i >= len(self._opt_btns):
                 break
-            btn = self._opt_btns[i]
+            btn   = self._opt_btns[i]
             frame = self._opt_frames[i]
             selected = key in self._selected
-
             if key in correct_set and selected:
                 frame.configure(bg=GREEN)
-                btn.configure(bg="#1a3828")
+                btn.configure(bg="#1a3828", highlightbackground="#1a3828")
             elif key not in correct_set and selected:
                 frame.configure(bg=RED)
-                btn.configure(bg="#3a1a1a")
+                btn.configure(bg="#3a1a1a", highlightbackground="#3a1a1a")
             elif key in correct_set and not selected:
                 frame.configure(bg=YELLOW)
-                btn.configure(bg="#3a3010")
-            # else: wrong and not selected — leave neutral
+                btn.configure(bg="#3a3010", highlightbackground="#3a3010")
 
-        is_correct = q.check(list(self._selected))
         self._expl_lbl.configure(text=q.explanation)
         self._expl_frame.pack(fill="x", padx=18, pady=(8, 4))
         self._feedback_frame.pack(pady=6)
@@ -871,8 +826,8 @@ class MockExamScreen(tk.Frame):
     def __init__(self, master, questions, engine, on_back):
         super().__init__(master, bg=BG)
         self._questions = questions
-        self._engine = engine
-        self._on_back = on_back
+        self._engine    = engine
+        self._on_back   = on_back
         self._answers: dict[int, set] = {i: set() for i in range(len(questions))}
         self._current = 0
         self._elapsed = 0
@@ -884,7 +839,6 @@ class MockExamScreen(tk.Frame):
     # ── layout ──────────────────────────────────────────────
 
     def _build(self) -> None:
-        # ── header ──
         hdr = tk.Frame(self, bg=BG)
         hdr.pack(fill="x", padx=18, pady=(10, 4))
         tk.Label(hdr, text="Mock Exam", bg=BG, fg=ACCENT,
@@ -896,7 +850,7 @@ class MockExamScreen(tk.Frame):
                                    font=(FONT, 11))
         self._timer_lbl.pack(side="right")
 
-        # ── dot navigation ──
+        # dot navigation
         dot_scroll = tk.Frame(self, bg=BG)
         dot_scroll.pack(fill="x", padx=18, pady=(2, 6))
         self._dot_canvas = tk.Canvas(dot_scroll, height=18, bg=BG,
@@ -905,13 +859,12 @@ class MockExamScreen(tk.Frame):
         self._dot_canvas.bind("<Button-1>", self._dot_click)
         self._dot_ids: list = []
 
-        # ── question text ──
         self._q_lbl = tk.Label(self, text="", bg=BG, fg=TEXT,
                                font=(FONT, 12, "bold"),
                                wraplength=560, justify="left")
         self._q_lbl.pack(padx=24, pady=(6, 10), anchor="w")
 
-        # ── 4 option slots (2×2 grid including "No answer") ──
+        # 4 option slots (2×2 grid including "No answer")
         self._opt_frames: list[tk.Frame] = []
         self._opt_btns: list[tk.Button] = []
         grid_f = tk.Frame(self, bg=BG)
@@ -928,33 +881,24 @@ class MockExamScreen(tk.Frame):
                           font=(FONT, 10), relief="flat",
                           padx=10, pady=8, cursor="hand2",
                           bd=0, highlightthickness=0,
+                          highlightbackground=CARD_S,
                           command=lambda idx=i: self._toggle(idx))
             b.pack(fill="both", expand=True)
             self._opt_frames.append(f)
             self._opt_btns.append(b)
 
-        # ── prev / next ──
         nav = tk.Frame(self, bg=BG)
         nav.pack(fill="x", padx=18, pady=(12, 4))
 
-        prev_b = tk.Button(nav, text="← Prev", command=self._prev)
-        _btn(prev_b)
+        prev_b = _rbtn(nav, "← Prev", self._prev, padx=14, pady=7)
         prev_b.pack(side="left")
 
-        next_b = tk.Button(nav, text="Next →", command=self._next)
-        _btn(next_b)
+        next_b = _rbtn(nav, "Next →", self._next, padx=14, pady=7)
         next_b.pack(side="right")
 
-        # ── submit ──
-        submit_b = tk.Button(self, text="SUBMIT EXAM",
-                             command=self._submit,
-                             font=(FONT, 11, "bold"),
-                             bg="#3a1a1a", fg=RED,
-                             relief="flat", padx=22, pady=10,
-                             cursor="hand2", bd=0,
-                             highlightthickness=0,
-                             activebackground=RED,
-                             activeforeground="#fff")
+        submit_b = _rbtn(self, "SUBMIT EXAM", self._submit,
+                          danger=True, min_width=160,
+                          font_spec=(FONT, 11, "bold"), padx=22, pady=10)
         submit_b.pack(pady=8)
 
     # ── timer ───────────────────────────────────────────────
@@ -999,23 +943,24 @@ class MockExamScreen(tk.Frame):
         self._q_lbl.configure(text=q.question)
 
         options = list(q.options.items())
-        saved = self._answers[idx]
+        saved   = self._answers[idx]
 
         for i in range(4):
-            btn = self._opt_btns[i]
+            btn   = self._opt_btns[i]
             frame = self._opt_frames[i]
             if i < len(options):
                 key, text = options[i]
-                selected = key in saved
+                selected  = key in saved
+                fill      = "#2a2a55" if selected else CARD_S
                 btn.configure(text=f"{key})  {text}", state="normal",
-                              bg="#2a2a55" if selected else CARD_S)
+                              bg=fill, highlightbackground=fill)
                 frame.configure(bg=ACCENT if selected else BORDER)
                 frame.grid()
             elif i == 3:
-                # "No answer" slot
                 selected = "none" in saved
+                fill     = "#2a2a55" if selected else CARD_S
                 btn.configure(text="⊘  No answer", state="normal",
-                              bg="#2a2a55" if selected else CARD_S)
+                              bg=fill, highlightbackground=fill)
                 frame.configure(bg=ACCENT if selected else BORDER)
                 frame.grid()
             else:
@@ -1026,7 +971,7 @@ class MockExamScreen(tk.Frame):
     # ── interaction ─────────────────────────────────────────
 
     def _toggle(self, slot: int) -> None:
-        q = self._questions[self._current]
+        q       = self._questions[self._current]
         options = list(q.options.keys())
         if slot < len(options):
             key = options[slot]
@@ -1034,7 +979,6 @@ class MockExamScreen(tk.Frame):
             key = "none"
         else:
             return
-
         saved = self._answers[self._current]
         if key == "none":
             saved.clear()
@@ -1045,7 +989,6 @@ class MockExamScreen(tk.Frame):
                 saved.discard(key)
             else:
                 saved.add(key)
-
         self._show_question(self._current)
 
     def _prev(self) -> None:
@@ -1075,25 +1018,25 @@ class MockExamScreen(tk.Frame):
 class ResultsScreen(tk.Frame):
     def __init__(self, master, questions, answers, elapsed, engine, on_back):
         super().__init__(master, bg=BG)
-        self._questions = questions
-        self._answers = answers
-        self._elapsed = elapsed
-        self._engine = engine
-        self._on_back = on_back
+        self._questions      = questions
+        self._answers        = answers
+        self._elapsed        = elapsed
+        self._engine         = engine
+        self._on_back        = on_back
         self._wrong_expanded = False
         self._update_mastery()
         self._build()
 
     def _update_mastery(self) -> None:
         for i, q in enumerate(self._questions):
-            selected = [k for k in self._answers[i] if k != "none"]
+            selected   = [k for k in self._answers[i] if k != "none"]
             is_correct = q.check(selected)
             q.update(is_correct)
         self._engine.save_progress()
 
     def _build(self) -> None:
         m, s = divmod(self._elapsed, 60)
-        n = len(self._questions)
+        n    = len(self._questions)
         correct_count = sum(
             1 for i, q in enumerate(self._questions)
             if q.check([k for k in self._answers[i] if k != "none"])
@@ -1112,37 +1055,34 @@ class ResultsScreen(tk.Frame):
         canvas.pack(side="left", fill="both", expand=True)
         sb.configure(command=canvas.yview)
         inner = tk.Frame(canvas, bg=BG)
-        win = canvas.create_window((0, 0), window=inner, anchor="nw")
+        win   = canvas.create_window((0, 0), window=inner, anchor="nw")
 
         def _on_resize(event):
             canvas.itemconfigure(win, width=event.width)
         canvas.bind("<Configure>", _on_resize)
         inner.bind("<Configure>",
-                   lambda e: canvas.configure(
-                       scrollregion=canvas.bbox("all")))
+                   lambda e: canvas.configure(scrollregion=canvas.bbox("all")))
 
         pad = {"padx": 28, "pady": 4}
 
         tk.Label(inner, text="Mock Exam Results", bg=BG, fg=ACCENT,
                  font=(FONT, 20, "bold")).pack(pady=(20, 6))
 
-        pct = int(correct_count / n * 100) if n else 0
+        pct   = int(correct_count / n * 100) if n else 0
         color = GREEN if pct >= 60 else (YELLOW if pct >= 40 else RED)
         tk.Label(inner, text=f"Score: {correct_count} / {n}  ({pct}%)",
                  bg=BG, fg=color, font=(FONT, 16, "bold")).pack(pady=(0, 10))
 
-        # stats row
         stats_row = tk.Frame(inner, bg=BG)
         stats_row.pack(**pad)
         for txt, clr in [(f"Correct: {correct_count} ✓", GREEN),
-                         (f"Wrong: {n - correct_count} ✗", RED),
-                         (f"Time: {m}:{s:02d}", TEXT)]:
+                         (f"Wrong: {n - correct_count} ✗",  RED),
+                         (f"Time: {m}:{s:02d}",              TEXT)]:
             f = tk.Frame(stats_row, bg=SURFACE, padx=12, pady=8)
             f.pack(side="left", padx=6)
             tk.Label(f, text=txt, bg=SURFACE, fg=clr,
                      font=(FONT, 11, "bold")).pack()
 
-        # weak topics
         weak = self._weak_topics_this_session(wrong_questions)
         if weak:
             tk.Label(inner, text="Weak topics this session:",
@@ -1150,43 +1090,36 @@ class ResultsScreen(tk.Frame):
                 anchor="w", padx=28, pady=(12, 2))
             for topic, info in weak.items():
                 tk.Label(inner,
-                         text=f"  {topic.replace('_', ' ')}: {info['correct']}/{info['total']} ✗",
+                         text=f"  {topic.replace('_', ' ')}: "
+                              f"{info['correct']}/{info['total']} ✗",
                          bg=BG, fg=YELLOW, font=(FONT, 10)).pack(
                     anchor="w", padx=28)
 
-        # expand wrong answers
         self._wrong_frame = tk.Frame(inner, bg=BG)
         self._wrong_frame.pack(fill="x", padx=18, pady=(8, 0))
 
         if wrong_questions:
-            show_btn = tk.Button(inner, text="▶  Show wrong answers",
-                                 command=lambda: self._toggle_wrong(
-                                     wrong_questions, show_btn),
-                                 bg=SURFACE, fg=TEXT,
-                                 font=(FONT, 10), relief="flat",
-                                 padx=12, pady=6, cursor="hand2",
-                                 bd=0, highlightthickness=0)
+            show_btn = _rbtn(inner, "▶  Show wrong answers", None,
+                              min_width=220, padx=12, pady=6)
+            show_btn.configure(command=lambda: self._toggle_wrong(
+                wrong_questions, show_btn))
             show_btn.pack(anchor="w", padx=28, pady=(6, 0))
 
-        # action buttons
         btn_row = tk.Frame(inner, bg=BG)
         btn_row.pack(pady=18)
 
         weak_topics = list(weak.keys()) if weak else []
         if weak_topics:
-            prac = tk.Button(btn_row, text="Practice weak topics",
-                             command=lambda: self._practice_weak(weak_topics))
-            _btn(prac)
+            prac = _rbtn(btn_row, "Practice weak topics",
+                          lambda: self._practice_weak(weak_topics),
+                          min_width=160)
             prac.pack(side="left", padx=6)
 
-        new_mock = tk.Button(btn_row, text="New mock exam",
-                             command=self._new_mock)
-        _btn(new_mock)
+        new_mock = _rbtn(btn_row, "New mock exam", self._new_mock, min_width=130)
         new_mock.pack(side="left", padx=6)
 
-        back = tk.Button(btn_row, text="Back to learn",
-                         command=self._back)
-        _btn(back, primary=True)
+        back = _rbtn(btn_row, "Back to learn", self._back,
+                      primary=True, min_width=120)
         back.pack(side="left", padx=6)
 
     def _weak_topics_this_session(self, wrong_questions) -> dict:
@@ -1197,11 +1130,6 @@ class ResultsScreen(tk.Frame):
                 by_topic[t] = {"total": 0, "correct": 0}
             by_topic[t]["total"] += 1
 
-        for _, q in wrong_questions:
-            if q.topic in by_topic:
-                pass  # correct stays 0 for wrong answers
-
-        # recompute: correct = total - wrong_count
         wrong_topics = {}
         for _, q in wrong_questions:
             wrong_topics[q.topic] = wrong_topics.get(q.topic, 0) + 1
