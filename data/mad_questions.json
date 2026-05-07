@@ -555,7 +555,7 @@
       "correct": [
         "b"
       ],
-      "explanation": "Linear orderings of 3 distinct elements = 3! = 6."
+      "explanation": "The number of distinct linear orderings of n distinct elements is n!. For the 3 elements {√2, e, π} (all distinct real numbers) the count is 3!=6. Each ordering is a bijection from {1,2,3} to the set."
     },
     {
       "id": "2017_q16",
@@ -1252,7 +1252,7 @@
       "correct": [
         "b"
       ],
-      "explanation": "E(X²)=(1²+…+6²)/6=91/6≈15.17≠20. E(X)=3.5 ✓."
+      "explanation": "E(X)=(1+2+3+4+5+6)/6=21/6=3.5 ✓. E(X²)=(1²+2²+3²+4²+5²+6²)/6=(1+4+9+16+25+36)/6=91/6≈15.17, not 20. V(X)=E(X²)−E(X)²=91/6−49/4=35/12≈2.92."
     },
     {
       "id": "2019j_q01",
@@ -1783,7 +1783,7 @@
       "correct": [
         "b"
       ],
-      "explanation": "5 grades, want ≥2 with same grade: 5+1=6 students needed ✓."
+      "explanation": "Pigeonhole principle: with 5 possible grade values (pigeonholes) and n students (pigeons), at least two share the same grade once n>5, i.e. when n=6. 5 students could all have distinct grades, but the 6th must duplicate one."
     },
     {
       "id": "2020_q15",
@@ -2061,7 +2061,7 @@
       "correct": [
         "a"
       ],
-      "explanation": "Stars-and-bars: C(5+3−1,3)=C(7,3) ✓."
+      "explanation": "Stars-and-bars: distributing 3 identical scoops across 5 distinct flavors (repetition allowed) gives C(n+k−1,k−1)=C(5+3−1,3−1)=C(7,3)=35 ways. The formula counts non-negative integer solutions to x₁+…+x₅=3."
     },
     {
       "id": "2022_q13",
@@ -2154,7 +2154,7 @@
       "correct": [
         "b"
       ],
-      "explanation": "5 grades → 5 holes, want ≥2 same: need 5+1=6 students ✓."
+      "explanation": "Pigeonhole principle: 5 possible grades are the pigeonholes. To guarantee at least 2 students land in the same grade we need 5+1=6 students (one per grade fills all holes; the 6th must repeat a grade)."
     },
     {
       "id": "2022_q19",
@@ -2417,7 +2417,7 @@
       "correct": [
         "b"
       ],
-      "explanation": "24 students to 5 advisors with ≥1 each: S(24,5)·5! ✓."
+      "explanation": "Distributing 24 distinguishable students to 5 labeled advisors with at least one student per advisor: multiply the Stirling number of the second kind S(24,5) (counting unlabeled partitions into 5 non-empty parts) by 5! to assign each part to a distinct advisor."
     },
     {
       "id": "2023a_q16",
@@ -2432,7 +2432,7 @@
       "correct": [
         "b"
       ],
-      "explanation": "x₁+x₂+x₃=17, xᵢ≥0: C(17+3−1,3−1)=C(19,2)=19!/(17!·2!) ✓."
+      "explanation": "Stars-and-bars for non-negative integer solutions to x₁+x₂+x₃=17: place 17 identical stars into 3 labelled bins using 2 dividers. The count is C(17+3−1, 3−1)=C(19,2)=19!/(17!·2!)=171."
     },
     {
       "id": "2023a_q17",
@@ -2462,7 +2462,7 @@
       "correct": [
         "c"
       ],
-      "explanation": "27 students into 3! labeled groups of 9 each: 3!·S(27,3) ✓."
+      "explanation": "Splitting 27 labelled students into 3 labelled groups requires choosing which students go to group 1 (then 2, then 3). The formula 3!·S(27,3) uses the Stirling number S(27,3) for unlabelled partitions into 3 non-empty parts, then multiplies by 3! to assign each part to a distinct labelled group."
     },
     {
       "id": "2023a_q19",
@@ -2735,7 +2735,7 @@
       "correct": [
         "b"
       ],
-      "explanation": "8 people at round table, rotations equivalent: (8−1)!=7! ✓."
+      "explanation": "Circular permutations of n distinct objects: fix one person to remove rotational symmetry, then arrange the remaining n−1 in (n−1)! ways. For 8 people: (8−1)!=7!=5040. Reflections are not identified here (chairs are distinct positions)."
     },
     {
       "id": "2023b_q17",
