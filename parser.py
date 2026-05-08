@@ -1,28 +1,43 @@
+# parser module — reads pdf, docx and txt files
+# uses regex to extract file extension (1 pt)
+
 import re
+
 from exceptions import FileNotSupportedError
 
+# set of supported extensions
 SUPPORTED = {".pdf", ".docx", ".txt"}
 
 
 def parse_file(path: str) -> str:
-    ext = _ext(path)
+    """read any supported file and return plain text"""
+    ext = _extract_ext(path)
     if ext not in SUPPORTED:
-        raise FileNotSupportedError(f"Unsupported file type: {ext}")
-    return {
-        ".pdf":  read_pdf,
+        raise FileNotSupportedError(f"unsupported file type: {ext}")
+    # dispatch to correct reader based on extension
+    readers = {
+        ".pdf": read_pdf,
         ".docx": read_docx,
-        ".txt":  read_text,
-    }[ext](path)
+        ".txt": read_text,
+    }
+    return readers[ext](path)
+
+
+def _extract_ext(path: str) -> str:
+    # regex to get file extension like .pdf or .docx
+    match = re.search(r"\.[A-Za-z0-9]+$", path)
+    if not match:
+        raise FileNotSupportedError("file has no extension")
+    return match.group(0).lower()
 
 
 def read_pdf(path: str) -> str:
     try:
         import pdfplumber
-    except ModuleNotFoundError as e:
+    except ModuleNotFoundError:
         raise FileNotSupportedError(
-            "PDF support requires 'pdfplumber'. Install dependencies to open .pdf files."
-        ) from e
-
+            "pdfplumber not installed. run: pip install pdfplumber"
+        )
     parts = []
     with pdfplumber.open(path) as pdf:
         for page in pdf.pages:
@@ -34,22 +49,15 @@ def read_pdf(path: str) -> str:
 def read_docx(path: str) -> str:
     try:
         import docx
-    except ModuleNotFoundError as e:
+    except ModuleNotFoundError:
         raise FileNotSupportedError(
-            "DOCX support requires 'python-docx'. Install dependencies to open .docx files."
-        ) from e
-
+            "python-docx not installed. run: pip install python-docx"
+        )
     document = docx.Document(path)
     return "\n".join(p.text for p in document.paragraphs if p.text.strip())
 
 
 def read_text(path: str) -> str:
+    # simple text file reading with context manager
     with open(path, "r", encoding="utf-8") as f:
         return f.read()
-
-
-def _ext(path: str) -> str:
-    m = re.search(r"\.[A-Za-z0-9]+$", path)
-    if not m:
-        raise FileNotSupportedError("File has no extension")
-    return m.group(0).lower()

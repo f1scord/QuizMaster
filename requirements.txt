@@ -1,0 +1,4 @@
+customtkinter
+requests
+pdfplumber
+python-docx

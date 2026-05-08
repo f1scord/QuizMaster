@@ -1,30 +1,43 @@
+# decorators — we need at least one custom decorator (3 pts)
 import functools
 import traceback
 from datetime import datetime
 
 
 def log_action(func):
+    """logs every call to a function with timestamp"""
+
     @functools.wraps(func)
     def wrapper(*args, **kwargs):
-        summary = f"{func.__name__}({str(args[1:])[:80]})"
+        # write to log file using context manager (with statement)
         with open("logs.txt", "a", encoding="utf-8") as f:
-            f.write(f"[{datetime.now().isoformat(timespec='seconds')}] {summary}\n")
+            f.write(
+                f"[{datetime.now().isoformat(timespec='seconds')}] {func.__name__}\n"
+            )
         return func(*args, **kwargs)
+
     return wrapper
 
 
 def handle_errors(func):
+    """catches our custom errors and shows them in a popup"""
+
     @functools.wraps(func)
     def wrapper(*args, **kwargs):
         import tkinter.messagebox as mb
-        from exceptions import QuizMasterError
+
+        from exceptions import FlashcardsError
+
         try:
             return func(*args, **kwargs)
-        except QuizMasterError as e:
-            mb.showerror("QuizMaster error", str(e))
+        except FlashcardsError as e:
+            mb.showerror("flashcards error", str(e))
         except Exception:
             tb = traceback.format_exc()
             with open("logs.txt", "a", encoding="utf-8") as f:
-                f.write(f"[{datetime.now().isoformat(timespec='seconds')}] UNHANDLED:\n{tb}\n")
-            mb.showerror("Unexpected error", "Something went wrong. Check logs.txt for details.")
+                f.write(
+                    f"[{datetime.now().isoformat(timespec='seconds')}] UNHANDLED:\n{tb}\n"
+                )
+            mb.showerror("unexpected error", "something went wrong. check logs.txt")
+
     return wrapper

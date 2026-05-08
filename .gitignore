@@ -7,3 +7,4 @@ venv/
 .vscode/
 data/
 logs.txt
+.env
